@@ -1,0 +1,85 @@
+import type { InferProps } from "@zayne-labs/toolkit-react/utils";
+import { OTPInput, OTPInputContext } from "input-otp";
+import { use } from "react";
+import { cnMerge } from "@/lib/utils/cn";
+import { IconBox } from "../common/IconBox";
+
+function InputOTPRoot(
+	props: InferProps<typeof OTPInput> & { classNames?: { container?: string; input?: string } }
+) {
+	const { className, classNames, containerClassName, ...restOfProps } = props;
+
+	return (
+		<OTPInput
+			data-slot="input-otp-root"
+			containerClassName={cnMerge(
+				"flex items-center gap-2 has-disabled:opacity-50",
+				containerClassName,
+				classNames?.container
+			)}
+			className={cnMerge("disabled:cursor-not-allowed", className, classNames?.input)}
+			{...restOfProps}
+		/>
+	);
+}
+
+function InputOTPGroup(props: InferProps<"div">) {
+	const { className, ...restOfProps } = props;
+
+	return (
+		<div
+			data-slot="input-otp-group"
+			className={cnMerge("flex items-center", className)}
+			{...restOfProps}
+		/>
+	);
+}
+
+function InputOTPSlot(
+	props: InferProps<"div"> & { classNames?: { base?: string; isActive?: string }; index: number }
+) {
+	const { className, classNames, index, ...restOfProps } = props;
+
+	const inputOTPContext = use(OTPInputContext);
+
+	const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index] ?? {};
+
+	return (
+		<div
+			data-slot="input-otp-slot"
+			data-active={isActive}
+			className={cnMerge(
+				`relative flex size-9 items-center justify-center border border-shadcn-input text-sm shadow-xs
+				transition-all outline-none aria-invalid:border-shadcn-destructive`,
+				isActive
+					&& `z-10 border-shadcn-ring ring-[3px] ring-shadcn-ring/50
+					aria-invalid:border-shadcn-destructive aria-invalid:ring-shadcn-destructive/20
+					dark:bg-shadcn-input/30 dark:aria-invalid:ring-shadcn-destructive/40`,
+				isActive && classNames?.isActive,
+				className,
+				classNames?.base
+			)}
+			{...restOfProps}
+		>
+			{char}
+			{hasFakeCaret && (
+				<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+					<div className="h-4 w-px animate-caret-blink bg-shadcn-foreground duration-1000" />
+				</div>
+			)}
+		</div>
+	);
+}
+
+function InputOTPSeparator(props: InferProps<"div">) {
+	return (
+		<div data-slot="input-otp-separator" role="separator" {...props}>
+			<IconBox icon="radix-icons:dash" />
+		</div>
+	);
+}
+
+export const Root = InputOTPRoot;
+export const Group = InputOTPGroup;
+export const Slot = InputOTPSlot;
+export const Separator = InputOTPSeparator;
