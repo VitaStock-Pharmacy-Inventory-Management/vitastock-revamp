@@ -6,35 +6,33 @@
 /* App Colors        */
 /*-------------------*/
 @theme {
-	/* Primary Colors */
-	--color-vitastock-primary: #004ac6;
+	--color-vitastock-primary-main: #004ac6;
 	--color-vitastock-primary-darker: #003ea8;
 	--color-vitastock-primary-lighter: #2563eb;
 	--color-vitastock-primary-subtle: #dbe1ff;
 
-	/* Secondary Colors */
-	--color-vitastock-secondary: #e7e8e9;
+	--color-vitastock-secondary-main: #e7e8e9;
 	--color-vitastock-secondary-darker: #737888;
 	--color-vitastock-secondary-lighter: #edeeef;
 	--color-vitastock-secondary-subtle: #f3f4f5;
 
-	/* State Colors */
 	--color-vitastock-error: #ba1a1a;
-	--color-vitastock-error-light: #ffb4ab;
-	--color-vitastock-warning: #eab308;
-	--color-vitastock-warning-light: #fef08a;
-	--color-vitastock-info: #3b82f6;
-	--color-vitastock-info-light: #93c5fd;
-	--color-vitastock-success: #22c55e;
-	--color-vitastock-success-light: #86efac;
+	--color-vitastock-error-lighter: #ffb4ab;
 
-	/* Dark Shades */
+	--color-vitastock-warning: #eab308;
+	--color-vitastock-warning-lighter: #fef08a;
+
+	--color-vitastock-info: #3b82f6;
+	--color-vitastock-info-lighter: #93c5fd;
+
+	--color-vitastock-success: #22c55e;
+	--color-vitastock-success-lighter: #86efac;
+
 	--color-vitastock-dark-1: #191c1d;
 	--color-vitastock-dark-2: #2e3132;
 	--color-vitastock-dark-3: #434655;
 	--color-vitastock-dark-4: #737680;
 
-	/* Light Shades */
 	--color-vitastock-light-1: #d9dadb;
 	--color-vitastock-light-2: #efe3e4;
 	--color-vitastock-light-3: #f3f4f5;
