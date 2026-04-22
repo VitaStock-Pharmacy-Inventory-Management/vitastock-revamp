@@ -11,7 +11,7 @@ export default defineConfig({
 		monicon(),
 		setupPlugins({
 			format: ["avif"],
-			include: /^[^?]+\.(png|jpg)\?.*responsive.*$/,
+			include: /^[^?]+\.(png|jpg|svg)\?.*responsive.*$/,
 			lqip: { type: "thumbhash" },
 			w: [360, 1000],
 		}),

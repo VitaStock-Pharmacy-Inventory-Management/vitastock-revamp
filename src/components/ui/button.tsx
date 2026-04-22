@@ -5,6 +5,7 @@ import type { Prettify } from "@zayne-labs/toolkit-type-helpers";
 import { tv, type VariantProps } from "tailwind-variants";
 import { Slot } from "@/components/common/slot";
 import { cnJoin } from "@/lib/utils/cn";
+import { SpinnerIcon } from "../icons/SpinnerIcon";
 
 export type ButtonProps = InferProps<"button">
 	& Prettify<
@@ -18,14 +19,12 @@ export type ButtonProps = InferProps<"button">
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const buttonVariants = tv({
-	base: `inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap
-	ring-offset-shadcn-background transition-colors focus-visible:ring-2 focus-visible:ring-shadcn-ring
-	focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none
-	disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`,
+	base: `flex items-center justify-center rounded-[8px] text-[14px] font-medium
+	shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]`,
 
 	defaultVariants: {
-		size: "default",
-		variant: "default",
+		size: "medium",
+		theme: "primary",
 	},
 
 	variants: {
@@ -42,21 +41,15 @@ export const buttonVariants = tv({
 		},
 
 		size: {
-			default: "h-10 px-4 py-2",
-			icon: "size-10",
-			lg: "h-11 rounded-md px-8",
-			sm: "h-9 rounded-md px-3",
+			"full-width": "h-[46px] w-full px-6",
+
+			medium: "h-9.5 px-4 text-[14px]",
 		},
 
 		theme: {
-			default: "bg-shadcn-primary text-shadcn-primary-foreground hover:bg-shadcn-primary/90",
-			destructive:
-				"bg-shadcn-destructive text-shadcn-destructive-foreground hover:bg-shadcn-destructive/80",
-			ghost: "hover:bg-shadcn-accent hover:text-shadcn-accent-foreground",
-			link: "text-shadcn-primary underline-offset-4 hover:underline",
-			outline: `border border-shadcn-input bg-shadcn-background hover:bg-shadcn-accent
-			hover:text-shadcn-accent-foreground`,
-			secondary: "bg-shadcn-secondary text-shadcn-secondary-foreground hover:bg-shadcn-secondary/80",
+			primary: "bg-vitastock-218-100-39 text-white",
+
+			"primary-ghost": "border border-[hsl(231,20%,80%)] bg-transparent text-black",
 		},
 	},
 });
@@ -108,7 +101,7 @@ function Button<TElement extends React.ElementType = "button">(
 					loadingStyle === "replace-content" && "[grid-area:1/1]"
 				)}
 			>
-				{/* <WhiteSpinnerIcon /> */}
+				<SpinnerIcon />
 			</span>
 		</>
 	);

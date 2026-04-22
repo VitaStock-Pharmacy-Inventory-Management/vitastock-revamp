@@ -1,12 +1,20 @@
+import { lazy } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router";
 import { SonnerToaster } from "./components/common/Toaster";
 import { Providers } from "./Providers";
 
 /* Layouts */
+const RootLayout = lazy(() => import("./pages/layout"));
+const AuthLayout = lazy(() => import("./pages/auth/layout"));
 
 const routes = createRoutesFromElements(
-	<Route>
+	<Route Component={RootLayout}>
 		{/* <Route path="/" Component={lazy(() => import("./pages/(home)/page"))} /> */}
+
+		<Route Component={AuthLayout}>
+			<Route path="/auth/signup" Component={lazy(() => import("./pages/auth/signup/page"))} />
+			<Route path="/auth/signin" Component={lazy(() => import("./pages/auth/signin/page"))} />
+		</Route>
 
 		{/* <Route Component={DashboardLayout}>
 			<Route path="/dashboard" Component={lazy(() => import("./pages/dashboard/page"))} />

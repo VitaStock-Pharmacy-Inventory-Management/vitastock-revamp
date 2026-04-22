@@ -6,37 +6,9 @@
 /* App Colors        */
 /*-------------------*/
 @theme {
-	--color-vitastock-primary-main: #004ac6;
-	--color-vitastock-primary-darker: #003ea8;
-	--color-vitastock-primary-lighter: #2563eb;
-	--color-vitastock-primary-subtle: #dbe1ff;
-
-	--color-vitastock-secondary-main: #e7e8e9;
-	--color-vitastock-secondary-darker: #737888;
-	--color-vitastock-secondary-lighter: #edeeef;
-	--color-vitastock-secondary-subtle: #f3f4f5;
-
-	--color-vitastock-error: #ba1a1a;
-	--color-vitastock-error-lighter: #ffb4ab;
-
-	--color-vitastock-warning: #eab308;
-	--color-vitastock-warning-lighter: #fef08a;
-
-	--color-vitastock-info: #3b82f6;
-	--color-vitastock-info-lighter: #93c5fd;
-
-	--color-vitastock-success: #22c55e;
-	--color-vitastock-success-lighter: #86efac;
-
-	--color-vitastock-dark-1: #191c1d;
-	--color-vitastock-dark-2: #2e3132;
-	--color-vitastock-dark-3: #434655;
-	--color-vitastock-dark-4: #737680;
-
-	--color-vitastock-light-1: #d9dadb;
-	--color-vitastock-light-2: #efe3e4;
-	--color-vitastock-light-3: #f3f4f5;
-	--color-vitastock-light-4: #f8f9fa;
+	--color-vitastock-225-34-44: hsl(225, 34%, 44%);
+	--color-vitastock-218-100-39: hsl(218, 100%, 39%);
+	--color-body-text: hsl(230, 12%, 30%);
 }
 
 /* ------------------*/
@@ -51,6 +23,8 @@
 	--breakpoint-xl: 1280px;
 
 	/*--- Fonts ---*/
+	--font-manrope: "Manrope", sans-serif;
+	--font-inter: "Inter", sans-serif;
 }
 
 /* ------------------*/
@@ -186,9 +160,17 @@
 	body {
 		min-height: 100%;
 		line-height: 1.5;
-		font-family: var(--font-geist-sans);
-		color: var(--foreground);
-		background-color: var(--background);
+		font-family: var(--font-inter);
+		color: var(--color-body-text);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-manrope);
 	}
 
 	img {
@@ -199,28 +181,5 @@
 
 	button:not(:disabled) {
 		cursor: pointer;
-	}
-}
-
-@utility custom-scrollbar {
-	&::-webkit-scrollbar {
-		width: 10px;
-	}
-
-	&::-webkit-scrollbar-track {
-		background-color: hsl(0, 0%, 76%);
-		border-radius: 10px 10px 0 0;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: hsl(0, 0%, 39%);
-		border: 1px solid hsl(0, 0%, 76%);
-		border-radius: 10px;
-	}
-}
-
-@utility scrollbar-hidden {
-	&::-webkit-scrollbar {
-		display: none;
 	}
 }
