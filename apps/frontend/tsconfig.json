@@ -1,5 +1,5 @@
 {
-	"extends": "@zayne-labs/tsconfig/bundler/dom",
+	"extends": ["../../tsconfig.base.json", "@zayne-labs/tsconfig/bundler/dom"],
 
 	"compilerOptions": {
 		"paths": {

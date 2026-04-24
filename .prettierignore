@@ -1,5 +1,5 @@
-.monicon
 dist
-node_modules
+.output
+.next
 pnpm-lock.yaml
-supabase
+*.tsbuildinfo

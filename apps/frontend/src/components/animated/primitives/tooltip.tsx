@@ -1,4 +1,4 @@
-/* eslint-disable react/set-state-in-effect */
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import {
@@ -14,7 +14,7 @@ import {
 } from "@floating-ui/react";
 import { createCustomContext } from "@zayne-labs/toolkit-react";
 import { AnimatePresence, LayoutGroup, motion, type HTMLMotionProps, type Transition } from "motion/react";
-import React, {
+import {
 	useCallback,
 	useEffect,
 	useId,

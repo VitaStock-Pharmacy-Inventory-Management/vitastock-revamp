@@ -1,11 +1,15 @@
 import { zayne } from "@zayne-labs/eslint-config";
 
 export default zayne({
-	ignores: [".monicon", "eslint.config.js"],
+	ignores: ["apps/frontend/.monicon", "eslint.config.js"],
 	react: true,
-	tailwindcssBetter: true,
-	typescript: true,
+	tailwindcssBetter: {
+		settings: { entryPoint: "apps/frontend/tailwind.css" },
+	},
 	tanstack: {
 		query: true,
+	},
+	typescript: {
+		tsconfigPath: ["apps/*/tsconfig.json", "packages/*/tsconfig.json"],
 	},
 });
