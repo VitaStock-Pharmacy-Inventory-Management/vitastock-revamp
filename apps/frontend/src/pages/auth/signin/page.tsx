@@ -28,6 +28,7 @@ function SigninPage() {
 							placeholder="Email Address"
 							className="h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4"
 						/>
+
 						<Form.ErrorMessage />
 					</Form.Field>
 
@@ -37,23 +38,33 @@ function SigninPage() {
 							type="password"
 							classNames={{ inputGroup: "h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4" }}
 						/>
+
 						<Form.ErrorMessage />
+
+						<NavLink
+							transitionType="regular"
+							to="/auth/forgot-password"
+							className="mt-1 self-end text-[14px] text-vitastock-218-100-39"
+						>
+							Forgot password?
+						</NavLink>
 					</Form.Field>
 				</div>
 
 				<div className="flex flex-col gap-4">
 					<Form.StateSubscribe>
 						{(formState) => (
-							<Button
-								type="submit"
-								theme="primary"
-								size="full-width"
-								className="font-bold"
-								isDisabled={formState.isSubmitting}
-								isLoading={formState.isSubmitting}
-							>
-								Sign in
-							</Button>
+							<Form.Submit asChild={true}>
+								<Button
+									isDisabled={formState.isSubmitting}
+									isLoading={formState.isSubmitting}
+									theme="primary"
+									size="full-width"
+									className="font-bold"
+								>
+									Sign in
+								</Button>
+							</Form.Submit>
 						)}
 					</Form.StateSubscribe>
 
@@ -65,7 +76,11 @@ function SigninPage() {
 
 				<p className="text-center text-[14px]">
 					I don't have an account.{" "}
-					<NavLink className="font-semibold text-vitastock-218-100-39" to="/auth/signup">
+					<NavLink
+						transitionType="regular"
+						className="font-semibold text-vitastock-218-100-39"
+						to="/auth/signup"
+					>
 						Sign up
 					</NavLink>
 				</p>

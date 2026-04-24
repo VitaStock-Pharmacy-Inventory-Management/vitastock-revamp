@@ -8,6 +8,7 @@
 @theme {
 	--color-vitastock-225-34-44: hsl(225, 34%, 44%);
 	--color-vitastock-218-100-39: hsl(218, 100%, 39%);
+	--color-vitastock-218-100-33: hsl(218, 100%, 33%);
 	--color-body-text: hsl(230, 12%, 30%);
 }
 
@@ -181,5 +182,36 @@
 
 	button:not(:disabled) {
 		cursor: pointer;
+	}
+}
+
+@utility nav-link-transition {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		background-color: var(--color-vitastock-218-100-33);
+		opacity: 0;
+		transform: translateX(-50%);
+		height: 2px;
+		width: 2px;
+		border-radius: 50%;
+		transition:
+			opacity 0.4s ease 0s,
+			bottom 0.3s ease 0.1s,
+			height 0.5s ease 0.3s,
+			border-radius 0.2s ease 0.4s,
+			width 0.5s ease 0.4s;
+	}
+
+	&:hover::before {
+		bottom: -0.7px;
+		height: 2px;
+		width: calc(100% + 2px);
+		border-radius: 20px;
+		opacity: 1;
 	}
 }

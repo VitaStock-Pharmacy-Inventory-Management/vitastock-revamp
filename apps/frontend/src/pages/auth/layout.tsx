@@ -34,14 +34,17 @@ function AuthLayout() {
 					<h2 className="text-[36px] font-bold text-white">VitaStock</h2>
 				</div>
 
-				<div className="flex flex-col gap-8">
-					<h3 className="text-[56px]/[70px] font-medium tracking-[-1.6px] text-white">
-						Track inventory. Prevent stockouts. Reduce expiry losses.
+				<div>
+					<h3 className="text-[64px]/[70px] font-medium tracking-[-1.6px] text-white">
+						Stay in control of your pharmacy inventory
 					</h3>
 
-					<p className="text-[18px] text-[hsl(226,100%,85%)]">
-						Real-time stock tracking and predictive depletion alerts. Automated FEFO (First Expire,
-						First Out) management. Seamless bulk import and dispensing workflows.
+					<p className="mt-8 text-[18px] text-[hsl(226,100%,85%)]">
+						Track stock in real time, prevent shortages, and avoid expired drugs — all in one simple
+						system.
+					</p>
+					<p className="mt-4 text-[14px] text-[hsl(226,100%,85%,0.8)]">
+						Built for fast-paced pharmacy workflows. No spreadsheets. No guesswork.
 					</p>
 				</div>
 
