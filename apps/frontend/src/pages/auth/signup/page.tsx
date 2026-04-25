@@ -13,81 +13,82 @@ function SignupPage() {
 
 	return (
 		<Main>
-			<header className="flex flex-col items-center">
-				<ImageResponsive src={logo} alt="Logo" width={96} className="w-[96px]" />
-				<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
-			</header>
-
-			<Form.Root
-				form={form}
-				onSubmit={(event) => void onSubmit(event)}
-				className="w-full max-w-[420px] gap-8"
+			<section
+				className="w-full max-w-[420px] gap-12 rounded-[16px] border border-[hsl(210,6%,93%)] bg-white
+					p-8 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]"
 			>
-				<div className="flex flex-col gap-4">
-					<Form.Field control={form.control} name="pharmacy_name">
-						<Form.Input
-							placeholder="Pharmacy Name"
-							className="h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4"
-						/>
-						<Form.ErrorMessage />
-					</Form.Field>
+				<header className="flex flex-col items-center">
+					<ImageResponsive src={logo} alt="Logo" width={96} className="w-[96px]" />
+					<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
+				</header>
 
-					<Form.Field control={form.control} name="email">
-						<Form.Input
-							placeholder="Email Address"
-							className="h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4"
-						/>
-						<Form.ErrorMessage />
-					</Form.Field>
+				<Form.Root form={form} onSubmit={(event) => void onSubmit(event)} className="w-full gap-8">
+					<div className="flex flex-col gap-4">
+						<Form.Field control={form.control} name="pharmacy_name">
+							<Form.Input
+								placeholder="Pharmacy Name"
+								className="h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4"
+							/>
+							<Form.ErrorMessage />
+						</Form.Field>
 
-					<Form.Field control={form.control} name="password">
-						<Form.Input
-							placeholder="Password"
-							type="password"
-							classNames={{ inputGroup: "h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4" }}
-						/>
-						<Form.ErrorMessage />
-					</Form.Field>
+						<Form.Field control={form.control} name="email">
+							<Form.Input
+								placeholder="Email Address"
+								className="h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4"
+							/>
+							<Form.ErrorMessage />
+						</Form.Field>
 
-					<Form.Field control={form.control} name="confirmPassword">
-						<Form.Input
-							placeholder="Confirm Password"
-							type="password"
-							classNames={{ inputGroup: "h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4" }}
-						/>
-						<Form.ErrorMessage />
-					</Form.Field>
-				</div>
+						<Form.Field control={form.control} name="password">
+							<Form.Input
+								placeholder="Password"
+								type="password"
+								classNames={{ inputGroup: "h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4" }}
+							/>
+							<Form.ErrorMessage />
+						</Form.Field>
 
-				<div className="flex flex-col gap-4">
-					<Form.StateSubscribe>
-						{(formState) => (
-							<Button
-								type="submit"
-								theme="primary"
-								size="full-width"
-								className="font-bold"
-								isDisabled={formState.isSubmitting}
-								isLoading={formState.isSubmitting}
-							>
-								Create your account
-							</Button>
-						)}
-					</Form.StateSubscribe>
+						<Form.Field control={form.control} name="confirmPassword">
+							<Form.Input
+								placeholder="Confirm Password"
+								type="password"
+								classNames={{ inputGroup: "h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4" }}
+							/>
+							<Form.ErrorMessage />
+						</Form.Field>
+					</div>
 
-					<Button theme="secondary-outline" size="full-width" className="gap-2 font-bold">
-						<IconBox icon="devicon:google" className="size-5" />
-						<p>Sign up with Google</p>
-					</Button>
-				</div>
+					<div className="flex flex-col gap-4">
+						<Form.StateSubscribe>
+							{(formState) => (
+								<Button
+									type="submit"
+									theme="primary"
+									size="full-width"
+									className="font-bold"
+									isDisabled={formState.isSubmitting}
+									isLoading={formState.isSubmitting}
+								>
+									Create your account
+								</Button>
+							)}
+						</Form.StateSubscribe>
 
-				<p className="text-center text-[14px]">
-					I already have an account.{" "}
-					<NavLink className="font-semibold text-vitastock-218-100-39" to="/auth/signin">
-						Sign in
-					</NavLink>
-				</p>
-			</Form.Root>
+						<Button theme="secondary-outline" size="full-width" className="gap-2 font-bold">
+							<IconBox icon="devicon:google" className="size-5" />
+							<p>Sign up with Google</p>
+						</Button>
+					</div>
+
+					<p className="text-center text-[14px]">
+						I already have an account.{" "}
+						<NavLink className="font-semibold text-vitastock-218-100-39" to="/auth/signin">
+							Sign in
+						</NavLink>
+					</p>
+				</Form.Root>
+			</section>
 		</Main>
 	);
 }
