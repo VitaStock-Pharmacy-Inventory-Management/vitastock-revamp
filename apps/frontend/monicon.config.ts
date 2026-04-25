@@ -26,5 +26,7 @@ function getIconsArray() {
 		"lucide:search",
 		"lucide:plus",
 		"devicon:google",
+		"mingcute:check-circle-fill",
+		"material-symbols:mail",
 	];
 }

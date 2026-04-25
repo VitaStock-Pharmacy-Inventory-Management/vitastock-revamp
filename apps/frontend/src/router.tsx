@@ -14,6 +14,14 @@ const routes = createRoutesFromElements(
 		<Route Component={AuthLayout}>
 			<Route path="/auth/signup" Component={lazy(() => import("./pages/auth/signup/page"))} />
 			<Route path="/auth/signin" Component={lazy(() => import("./pages/auth/signin/page"))} />
+			<Route
+				path="/auth/verify-email"
+				Component={lazy(() => import("./pages/auth/verify-email/page"))}
+			/>
+			<Route
+				path="/auth/verify-email/success"
+				Component={lazy(() => import("./pages/auth/verify-email/success/page"))}
+			/>
 		</Route>
 
 		{/* <Route Component={DashboardLayout}>
@@ -25,7 +33,7 @@ const routes = createRoutesFromElements(
 		</Route> */}
 
 		{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-		{/* <Route path="*" Component={lazy(() => import("./pages/not-found.page"))} /> */}
+		<Route path="*" Component={lazy(() => import("./pages/not-found"))} />
 	</Route>
 );
 

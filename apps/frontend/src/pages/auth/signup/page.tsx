@@ -4,6 +4,7 @@ import { IconBox } from "@/components/common/IconBox";
 import { ImageResponsive } from "@/components/common/Image";
 import { NavLink } from "@/components/common/NavLink";
 import { Button, Form } from "@/components/ui";
+import { Main } from "../-components/Main";
 
 function SignupPage() {
 	const form = useForm({});
@@ -11,7 +12,7 @@ function SignupPage() {
 	const onSubmit = form.handleSubmit(() => {});
 
 	return (
-		<main className="flex w-full grow flex-col items-center justify-center gap-[48px]">
+		<Main>
 			<header className="flex flex-col items-center">
 				<ImageResponsive src={logo} alt="Logo" width={96} className="w-[96px]" />
 				<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
@@ -74,7 +75,7 @@ function SignupPage() {
 						)}
 					</Form.StateSubscribe>
 
-					<Button theme="primary-ghost" size="full-width" className="gap-2 font-bold">
+					<Button theme="secondary-outline" size="full-width" className="gap-2 font-bold">
 						<IconBox icon="devicon:google" className="size-5" />
 						<p>Sign up with Google</p>
 					</Button>
@@ -87,7 +88,7 @@ function SignupPage() {
 					</NavLink>
 				</p>
 			</Form.Root>
-		</main>
+		</Main>
 	);
 }
 

@@ -12,15 +12,26 @@ export type ButtonProps = InferProps<"button">
 		VariantProps<typeof buttonVariants> & {
 			asChild?: boolean;
 			isLoading?: boolean;
-			loadingStyle?: "replace-content" | "side-by-side";
 			unstyled?: boolean;
 		}
 	>;
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const buttonVariants = tv({
-	base: `flex items-center justify-center rounded-[8px] text-[14px] font-medium
+const buttonVariants = tv({
+	base: `flex items-center justify-center gap-2 rounded-[8px] text-[14px] font-medium
 	shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]`,
+
+	compoundVariants: [
+		{
+			className: "grid place-items-center",
+			isLoading: true,
+			loadingStyle: "replace-content",
+		},
+		{
+			className: "gap-1.5",
+			isLoading: true,
+			loadingStyle: "side-by-side",
+		},
+	],
 
 	defaultVariants: {
 		size: "medium",
@@ -37,19 +48,26 @@ export const buttonVariants = tv({
 		},
 
 		isLoading: {
-			true: "grid content-center",
+			true: "",
+		},
+
+		loadingStyle: {
+			"replace-content": "",
+			"side-by-side": "",
 		},
 
 		size: {
-			"full-width": "h-[46px] w-full px-6",
+			"full-width": "h-12 w-full px-6",
 
-			medium: "h-9.5 px-4 text-[14px]",
+			medium: "h-12 px-4 text-[14px]",
 		},
 
 		theme: {
 			primary: "bg-vitastock-218-100-39 text-white",
 
-			"primary-ghost": "border border-[hsl(231,20%,80%)] bg-transparent text-black",
+			"primary-ghost": "bg-transparent text-vitastock-218-100-39",
+
+			"secondary-outline": "border-[1.5px] border-[hsl(231,20%,80%)] bg-transparent text-black",
 		},
 	},
 });
@@ -82,6 +100,7 @@ function Button<TElement extends React.ElementType = "button">(
 				disabled,
 				isDisabled,
 				isLoading,
+				loadingStyle,
 				size,
 				theme,
 			})
@@ -95,13 +114,8 @@ function Button<TElement extends React.ElementType = "button">(
 				:	children}
 			</Slot.Slottable>
 
-			<span
-				className={cnJoin(
-					"flex justify-center",
-					loadingStyle === "replace-content" && "[grid-area:1/1]"
-				)}
-			>
-				<SpinnerIcon />
+			<span className={cnJoin(loadingStyle === "replace-content" && "[grid-area:1/1]")}>
+				<SpinnerIcon className="size-5" />
 			</span>
 		</>
 	);

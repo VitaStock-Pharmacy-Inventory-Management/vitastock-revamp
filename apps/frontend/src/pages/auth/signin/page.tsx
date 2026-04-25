@@ -68,7 +68,7 @@ function SigninPage() {
 						)}
 					</Form.StateSubscribe>
 
-					<Button theme="primary-ghost" size="full-width" className="gap-2 font-bold">
+					<Button theme="secondary-outline" size="full-width" className="gap-2 font-bold">
 						<IconBox icon="devicon:google" className="size-5" />
 						<p>Sign in with Google</p>
 					</Button>
