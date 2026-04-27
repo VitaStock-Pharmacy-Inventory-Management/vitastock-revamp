@@ -3,7 +3,7 @@ import { IconBox } from "@/components/common/IconBox";
 import { Button } from "@/components/ui";
 import { Main } from "../../-components/Main";
 
-function EmailVerifiedPage() {
+function VerifyEmailSuccessPage() {
 	return (
 		<Main>
 			<section className="flex w-full max-w-[448px] flex-col items-center gap-8">
@@ -24,4 +24,4 @@ function EmailVerifiedPage() {
 	);
 }
 
-export default EmailVerifiedPage;
+export default VerifyEmailSuccessPage;

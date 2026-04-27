@@ -14,13 +14,11 @@ function SignupPage() {
 	return (
 		<Main>
 			<section
-				className="w-full max-w-[420px] gap-12 rounded-[16px] border border-[hsl(210,6%,93%)] bg-white
-					p-8 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]"
+				className="flex w-full max-w-[420px] flex-col items-center gap-12 rounded-[16px] border
+					border-[hsl(210,6%,93%)] bg-white p-8 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]"
 			>
-				<header className="flex flex-col items-center">
-					<ImageResponsive src={logo} alt="Logo" width={96} className="w-[96px]" />
-					<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
-				</header>
+				<ImageResponsive src={logo} alt="Logo" width={96} className="w-[96px]" />
+				<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
 
 				<Form.Root form={form} onSubmit={(event) => void onSubmit(event)} className="w-full gap-8">
 					<div className="flex flex-col gap-4">
@@ -60,10 +58,9 @@ function SignupPage() {
 					</div>
 
 					<div className="flex flex-col gap-4">
-						<Form.StateSubscribe>
+						<Form.Submit asChild={true}>
 							{(formState) => (
 								<Button
-									type="submit"
 									theme="primary"
 									size="full-width"
 									className="font-bold"
@@ -73,7 +70,7 @@ function SignupPage() {
 									Create your account
 								</Button>
 							)}
-						</Form.StateSubscribe>
+						</Form.Submit>
 
 						<Button theme="secondary-outline" size="full-width" className="gap-2 font-bold">
 							<IconBox icon="devicon:google" className="size-5" />

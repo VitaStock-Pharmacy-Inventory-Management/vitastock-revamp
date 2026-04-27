@@ -28,5 +28,7 @@ function getIconsArray() {
 		"devicon:google",
 		"mingcute:check-circle-fill",
 		"material-symbols:mail",
+		"material-symbols:troubleshoot",
+		"streamline:padlock-square-1-solid",
 	];
 }

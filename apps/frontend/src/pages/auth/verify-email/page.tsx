@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { For } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
 import { Button, Form, InputOTP } from "@/components/ui";
+import { Main } from "../-components/Main";
 
 function VerifyEmailPage() {
 	const form = useForm({});
@@ -11,7 +12,7 @@ function VerifyEmailPage() {
 	const onSubmit = form.handleSubmit(() => {});
 
 	return (
-		<main className="flex w-full grow flex-col items-center justify-center gap-12">
+		<Main>
 			<section className="flex max-w-[442px] flex-col items-center gap-8">
 				<span className="grid size-[80px] place-items-center rounded-[12px] bg-vitastock-226-100-84">
 					<IconBox icon="material-symbols:mail" className="size-7.5 text-vitastock-225-34-44" />
@@ -58,21 +59,19 @@ function VerifyEmailPage() {
 						<Form.ErrorMessage />
 					</Form.Field>
 
-					<Form.StateSubscribe>
+					<Form.Submit asChild={true}>
 						{(formState) => (
-							<Form.Submit asChild={true}>
-								<Button
-									isDisabled={formState.isSubmitting}
-									isLoading={formState.isSubmitting}
-									theme="primary"
-									size="full-width"
-									className="font-bold"
-								>
-									Verify email
-								</Button>
-							</Form.Submit>
+							<Button
+								isDisabled={formState.isSubmitting}
+								isLoading={formState.isSubmitting}
+								theme="primary"
+								size="full-width"
+								className="font-bold"
+							>
+								Verify email
+							</Button>
 						)}
-					</Form.StateSubscribe>
+					</Form.Submit>
 
 					<div className="flex flex-col items-center gap-2 text-center">
 						<p className="text-[14px] text-body-text">Didn't receive the code?</p>
@@ -86,7 +85,7 @@ function VerifyEmailPage() {
 					Didn’t receive the email? Check your spam folder or resend.
 				</p>
 			</section>
-		</main>
+		</Main>
 	);
 }
 

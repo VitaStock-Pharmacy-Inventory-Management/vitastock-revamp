@@ -22,6 +22,18 @@ const routes = createRoutesFromElements(
 				path="/auth/verify-email/success"
 				Component={lazy(() => import("./pages/auth/verify-email/success/page"))}
 			/>
+			<Route
+				path="/auth/forgot-password"
+				Component={lazy(() => import("./pages/auth/forgot-password/page"))}
+			/>
+			<Route
+				path="/auth/reset-password"
+				Component={lazy(() => import("./pages/auth/reset-password/page"))}
+			/>
+			<Route
+				path="/auth/reset-password/success"
+				Component={lazy(() => import("./pages/auth/reset-password/success/page"))}
+			/>
 		</Route>
 
 		{/* <Route Component={DashboardLayout}>
