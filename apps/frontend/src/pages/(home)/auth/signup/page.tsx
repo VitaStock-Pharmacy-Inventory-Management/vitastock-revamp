@@ -16,10 +16,9 @@ function SignupPage() {
 				className="flex w-full max-w-[420px] flex-col items-center gap-12 rounded-[16px] border
 					border-[hsl(210,6%,93%)] bg-white p-8 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]"
 			>
-				<div className="flex flex-col gap-1">
-					<Logo width={96} className="w-[96px]" />
+				<Logo width={96} classNames={{ base: "flex flex-col items-center gap-1", image: "w-[96px]" }}>
 					<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
-				</div>
+				</Logo>
 
 				<Form.Root form={form} onSubmit={(event) => void onSubmit(event)} className="w-full gap-8">
 					<div className="flex flex-col gap-4">

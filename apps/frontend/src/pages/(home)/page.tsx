@@ -1,6 +1,6 @@
 import { heroImage } from "@/assets/images";
 import { IconBox } from "@/components/common/IconBox";
-import { ImageResponsive } from "@/components/common/Image";
+import { ImageOnline } from "@/components/common/Image";
 import { NavLink } from "@/components/common/NavLink";
 import { Button } from "@/components/ui";
 import { Main } from "./-components/Main";
@@ -8,19 +8,22 @@ import { Main } from "./-components/Main";
 function HomePage() {
 	return (
 		<Main>
-			<section className="flex flex-col items-center pt-4 pb-[64px] text-center">
+			<section className="flex flex-col items-center pt-4 pb-[64px] text-center text-black">
 				<h1
 					className="max-w-[16ch] animate-fade-up font-inter text-[70px]/[72px] font-extrabold
-						tracking-tight text-balance text-black delay-60"
+						tracking-tight text-balance delay-60"
 				>
 					Never run out of{" "}
-					<span className="font-serif font-extrabold text-vitastock-218-100-39 italic">
+					<span className="font-serif font-extrabold text-vitastock-218-100-39/88 italic">
 						essential drugs
 					</span>{" "}
 					again.
 				</h1>
 
-				<p className="mt-6 animate-fade-up text-[20px] font-medium text-balance delay-120 md:text-xl">
+				<p
+					className="mt-6 max-w-[567px] animate-fade-up text-[20px] font-medium text-balance delay-120
+						md:text-xl"
+				>
 					Real-time stock tracking, expiry alerts, and fast inventory workflows, built for busy
 					pharmacies and dispensaries.
 				</p>
@@ -40,10 +43,10 @@ function HomePage() {
 				</div>
 
 				<div
-					className="mt-10 w-full rounded-[28px] border border-shadcn-border/60 bg-shadcn-muted p-2
-						shadow-lg"
+					className="mt-10 w-full max-w-[900px] rounded-[28px] border border-shadcn-border/60
+						bg-shadcn-muted p-2 shadow-lg"
 				>
-					<ImageResponsive src={heroImage} alt="Hero Image" className="rounded-[20px] bg-cover" />
+					<ImageOnline src={heroImage} alt="Hero Image" className="rounded-[20px] bg-cover" />
 				</div>
 			</section>
 		</Main>

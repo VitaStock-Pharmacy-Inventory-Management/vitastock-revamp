@@ -13,7 +13,7 @@ export default defineConfig({
 			format: ["avif"],
 			include: /^[^?]+\.(png|jpg|svg)\?.*responsive.*$/,
 			lqip: { type: "thumbhash" },
-			w: [360, 1000],
+			w: [640, 1200],
 		}),
 	],
 	resolve: {

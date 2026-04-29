@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import { authBg, logoInverted } from "@/assets/images";
 import { ImageResponsive } from "@/components/common/Image";
+import { Logo } from "@/pages/-components/Logo";
 
 function AuthLayout() {
 	return (
@@ -23,16 +24,13 @@ function AuthLayout() {
 					/>
 				</div>
 
-				<div className="flex items-center gap-3">
-					<ImageResponsive
-						src={logoInverted}
-						alt="Logo"
-						width={64}
-						height={58}
-						className="w-[64px]"
-					/>
-					<h2 className="text-[36px] font-bold text-white">VitaStock</h2>
-				</div>
+				<Logo
+					src={logoInverted}
+					width={64}
+					classNames={{ base: "flex items-center gap-3", image: "w-[64px]" }}
+				>
+					<h3 className="text-[36px] font-bold text-white">VitaStock</h3>
+				</Logo>
 
 				<div>
 					<h3 className="text-[64px]/[70px] font-medium tracking-[-1.6px] text-white">
