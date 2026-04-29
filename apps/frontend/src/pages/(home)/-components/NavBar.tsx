@@ -15,9 +15,9 @@ function NavBar() {
 		<header
 			ref={observedElementRef}
 			className={cnJoin(
-				`sticky top-0 z-500 flex h-[72px] w-full items-center justify-between bg-white/80 px-8
-				backdrop-blur-xl transition-shadow duration-300 ease-[ease]`,
-				isScrolled && "shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]"
+				`sticky top-0 z-500 flex h-[72px] w-full items-center justify-between px-8 transition-shadow
+				duration-300 ease-[ease]`,
+				isScrolled && "bg-white/80 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)] backdrop-blur-xl"
 			)}
 		>
 			<div className="flex items-center gap-2">
