@@ -17,7 +17,7 @@ export type ButtonProps = InferProps<"button">
 	>;
 
 const buttonVariants = tv({
-	base: "flex items-center justify-center gap-2 rounded-[8px] text-[14px] font-medium",
+	base: "flex items-center justify-center gap-2 rounded-[10px] text-[14px] font-medium",
 
 	compoundVariants: [
 		{
@@ -64,7 +64,11 @@ const buttonVariants = tv({
 		theme: {
 			primary: "bg-vitastock-218-100-39 text-white",
 
-			"primary-ghost": "bg-transparent text-vitastock-218-100-39",
+			"primary-ghost": `bg-transparent text-vitastock-218-100-39 hover:bg-vitastock-226-100-84/50
+			hover:text-vitastock-218-100-33`,
+
+			"primary-outline": `border-[1.5px] border-vitastock-218-100-39 bg-transparent
+			text-vitastock-218-100-39 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]`,
 
 			"secondary-outline": `border-[1.5px] border-[hsl(231,20%,80%)] bg-transparent text-black
 			shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]`,

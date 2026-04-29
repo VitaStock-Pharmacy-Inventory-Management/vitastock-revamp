@@ -5,34 +5,37 @@ import { Providers } from "./Providers";
 
 /* Layouts */
 const RootLayout = lazy(() => import("./pages/layout"));
-const AuthLayout = lazy(() => import("./pages/auth/layout"));
+const HomeLayout = lazy(() => import("./pages/(home)/layout"));
+const AuthLayout = lazy(() => import("./pages/(home)/auth/layout"));
 
 const routes = createRoutesFromElements(
 	<Route Component={RootLayout}>
-		{/* <Route path="/" Component={lazy(() => import("./pages/(home)/page"))} /> */}
+		<Route Component={HomeLayout}>
+			<Route path="/" Component={lazy(() => import("./pages/(home)/page"))} />
+		</Route>
 
 		<Route Component={AuthLayout}>
-			<Route path="/auth/signup" Component={lazy(() => import("./pages/auth/signup/page"))} />
-			<Route path="/auth/signin" Component={lazy(() => import("./pages/auth/signin/page"))} />
+			<Route path="/auth/signup" Component={lazy(() => import("./pages/(home)/auth/signup/page"))} />
+			<Route path="/auth/signin" Component={lazy(() => import("./pages/(home)/auth/signin/page"))} />
 			<Route
 				path="/auth/verify-email"
-				Component={lazy(() => import("./pages/auth/verify-email/page"))}
+				Component={lazy(() => import("./pages/(home)/auth/verify-email/page"))}
 			/>
 			<Route
 				path="/auth/verify-email/success"
-				Component={lazy(() => import("./pages/auth/verify-email/success/page"))}
+				Component={lazy(() => import("./pages/(home)/auth/verify-email/success/page"))}
 			/>
 			<Route
 				path="/auth/forgot-password"
-				Component={lazy(() => import("./pages/auth/forgot-password/page"))}
+				Component={lazy(() => import("./pages/(home)/auth/forgot-password/page"))}
 			/>
 			<Route
 				path="/auth/reset-password"
-				Component={lazy(() => import("./pages/auth/reset-password/page"))}
+				Component={lazy(() => import("./pages/(home)/auth/reset-password/page"))}
 			/>
 			<Route
 				path="/auth/reset-password/success"
-				Component={lazy(() => import("./pages/auth/reset-password/success/page"))}
+				Component={lazy(() => import("./pages/(home)/auth/reset-password/success/page"))}
 			/>
 		</Route>
 

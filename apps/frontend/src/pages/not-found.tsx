@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router";
 import { IconBox } from "@/components/common/IconBox";
 import { Button } from "@/components/ui";
-import { Main } from "./auth/-components/Main";
+import { Logo } from "./-components/Logo";
+import { Main } from "./(home)/auth/-components/Main";
 
 function NotFoundPage() {
+	const navigate = useNavigate();
+
 	return (
-		<Main>
+		<Main className="relative">
 			<section className="relative isolate flex flex-col items-center gap-10 text-center">
 				<span
 					className="absolute right-[256px] -z-1 size-[384px] bg-vitastock-218-100-39/5
@@ -15,16 +19,25 @@ function NotFoundPage() {
 						blur-3xl"
 				/>
 
-				<span
-					className="relative grid size-[96px] place-items-center rounded-[12px] border
-						border-[hsl(231,20%,80%)] bg-white"
-				>
-					<p className="absolute -z-1 text-[192px] font-extrabold text-[hsl(210,4%,91%,0.6)]">404</p>
-					<IconBox
-						icon="material-symbols:troubleshoot"
-						className="size-10 text-vitastock-218-100-39"
-					/>
-				</span>
+				<div className="flex flex-col items-center gap-6">
+					<div className="flex items-center gap-3">
+						<Logo width={48} className="w-12 animate-pulse" />
+						<span className="text-[28px] font-extrabold tracking-tight text-black">VitaStock</span>
+					</div>
+
+					<span
+						className="relative grid size-30 place-items-center rounded-2xl border
+							border-[hsl(231,20%,80%)] bg-white shadow-xl shadow-vitastock-218-100-39/10"
+					>
+						<p className="absolute -z-1 text-[192px] font-extrabold text-[hsl(210,4%,91%,0.6)]">
+							404
+						</p>
+						<IconBox
+							icon="material-symbols:troubleshoot"
+							className="size-10 text-vitastock-218-100-39"
+						/>
+					</span>
+				</div>
 
 				<div className="flex flex-col gap-4">
 					<h1 className="text-[48px] font-bold text-black">Page not found</h1>
@@ -35,7 +48,7 @@ function NotFoundPage() {
 
 				<div className="flex gap-4">
 					<Button className="px-8">Go to Dashboard</Button>
-					<Button theme="primary-ghost">
+					<Button theme="primary-ghost" onClick={() => void navigate(-1)}>
 						<IconBox icon="lucide:arrow-left" className="size-3.5" />
 						<p>Back</p>
 					</Button>

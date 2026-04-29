@@ -12,8 +12,8 @@ function NavLink(
 
 	return (
 		<NavLinkPrimitive
-			data-active={pathname === to}
 			to={to}
+			data-active={pathname === to}
 			className={(renderProps) =>
 				cnMerge(
 					transitionType !== "no-transition" && "nav-link-transition",

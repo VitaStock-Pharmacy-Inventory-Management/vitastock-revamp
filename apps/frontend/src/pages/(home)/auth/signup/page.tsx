@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
-import { logo } from "@/assets/images";
 import { IconBox } from "@/components/common/IconBox";
-import { ImageResponsive } from "@/components/common/Image";
 import { NavLink } from "@/components/common/NavLink";
 import { Button, Form } from "@/components/ui";
+import { Logo } from "@/pages/-components/Logo";
 import { Main } from "../-components/Main";
 
-function SigninPage() {
+function SignupPage() {
 	const form = useForm({});
 
 	const onSubmit = form.handleSubmit(() => {});
@@ -17,17 +16,26 @@ function SigninPage() {
 				className="flex w-full max-w-[420px] flex-col items-center gap-12 rounded-[16px] border
 					border-[hsl(210,6%,93%)] bg-white p-8 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]"
 			>
-				<ImageResponsive src={logo} alt="Logo" width={96} className="w-[96px]" />
-				<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
+				<div className="flex flex-col gap-1">
+					<Logo width={96} className="w-[96px]" />
+					<h1 className="text-[30px] font-bold text-black">VitaStock</h1>
+				</div>
 
 				<Form.Root form={form} onSubmit={(event) => void onSubmit(event)} className="w-full gap-8">
 					<div className="flex flex-col gap-4">
+						<Form.Field control={form.control} name="pharmacy_name">
+							<Form.Input
+								placeholder="Pharmacy Name"
+								className="h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4"
+							/>
+							<Form.ErrorMessage />
+						</Form.Field>
+
 						<Form.Field control={form.control} name="email">
 							<Form.Input
 								placeholder="Email Address"
 								className="h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4"
 							/>
-
 							<Form.ErrorMessage />
 						</Form.Field>
 
@@ -37,16 +45,16 @@ function SigninPage() {
 								type="password"
 								classNames={{ inputGroup: "h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4" }}
 							/>
-
 							<Form.ErrorMessage />
+						</Form.Field>
 
-							<NavLink
-								transitionType="regular"
-								to="/auth/forgot-password"
-								className="mt-1 self-end text-[14px] text-vitastock-218-100-39"
-							>
-								Forgot password?
-							</NavLink>
+						<Form.Field control={form.control} name="confirmPassword">
+							<Form.Input
+								placeholder="Confirm Password"
+								type="password"
+								classNames={{ inputGroup: "h-[50px] rounded-[8px] bg-[hsl(210,9%,96%)] p-4" }}
+							/>
+							<Form.ErrorMessage />
 						</Form.Field>
 					</div>
 
@@ -54,31 +62,27 @@ function SigninPage() {
 						<Form.Submit asChild={true}>
 							{(formState) => (
 								<Button
-									isDisabled={formState.isSubmitting}
-									isLoading={formState.isSubmitting}
 									theme="primary"
 									size="full-width"
 									className="font-bold"
+									isDisabled={formState.isSubmitting}
+									isLoading={formState.isSubmitting}
 								>
-									Sign in
+									Create your account
 								</Button>
 							)}
 						</Form.Submit>
 
 						<Button theme="secondary-outline" size="full-width" className="gap-2 font-bold">
 							<IconBox icon="devicon:google" className="size-5" />
-							<p>Sign in with Google</p>
+							<p>Sign up with Google</p>
 						</Button>
 					</div>
 
 					<p className="text-center text-[14px]">
-						I don't have an account.{" "}
-						<NavLink
-							transitionType="regular"
-							className="font-semibold text-vitastock-218-100-39"
-							to="/auth/signup"
-						>
-							Sign up
+						I already have an account.{" "}
+						<NavLink className="font-semibold text-vitastock-218-100-39" to="/auth/signin">
+							Sign in
 						</NavLink>
 					</p>
 				</Form.Root>
@@ -87,4 +91,4 @@ function SigninPage() {
 	);
 }
 
-export default SigninPage;
+export default SignupPage;

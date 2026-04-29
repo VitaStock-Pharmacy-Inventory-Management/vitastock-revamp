@@ -48,7 +48,7 @@ function ForgotPasswordPage() {
 						</Form.Submit>
 
 						<Button theme="primary-ghost" size="full-width" asChild={true}>
-							<NavLink to="/auth/sign-in">
+							<NavLink to="/auth/signin">
 								<IconBox icon="lucide:arrow-left" className="size-3.5" />
 								<p>Back to sign in</p>
 							</NavLink>
