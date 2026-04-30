@@ -311,7 +311,7 @@ function MotionHighlightRoot<T extends React.ElementType = "div">(props: Highlig
 					render(children)
 				:	render(
 						toArray(children).map((child, index) => (
-							// eslint-disable-next-line react/no-array-index-key, react/prefer-destructuring-assignment
+							// eslint-disable-next-line react/no-array-index-key
 							<MotionHighlightItem key={index} className={props.itemsClassName}>
 								{child}
 							</MotionHighlightItem>
@@ -497,7 +497,6 @@ function MotionHighlightItem<T extends React.ElementType = "div">(props: Highlig
 		if (mode === "children") {
 			return cloneElement(
 				element,
-				// eslint-disable-next-line react-hooks/refs
 				{
 					className: cnMerge("relative", element.props.className),
 					key: childValue,
@@ -551,7 +550,6 @@ function MotionHighlightItem<T extends React.ElementType = "div">(props: Highlig
 			);
 		}
 
-		// eslint-disable-next-line react-hooks/refs
 		return cloneElement(element, {
 			ref: localRef,
 			...getNonOverridingDataAttributes(element, {

@@ -1,4 +1,3 @@
-/* eslint-disable react/component-hook-factories */
 /* eslint-disable react/no-nested-component-definitions */
 
 import type { InferProps } from "@zayne-labs/toolkit-react/utils";

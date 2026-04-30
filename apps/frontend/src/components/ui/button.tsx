@@ -63,7 +63,7 @@ const buttonVariants = tv({
 		},
 
 		theme: {
-			primary: "bg-vitastock-218-100-39 text-white",
+			primary: "bg-vitastock-218-100-39 text-white hover:bg-vitastock-218-100-39/90",
 
 			"primary-ghost": `bg-transparent text-vitastock-218-100-39 hover:bg-vitastock-226-100-84/50
 			hover:text-vitastock-218-100-33`,
