@@ -8,22 +8,17 @@ import { Main } from "./-components/Main";
 function HomePage() {
 	return (
 		<Main>
-			<section className="flex flex-col items-center pt-4 pb-[64px] text-center text-black">
+			<section className="flex w-full flex-col items-center py-[64px] text-center text-black">
 				<h1
-					className="max-w-[16ch] animate-fade-up font-inter text-[70px]/[72px] font-extrabold
-						tracking-tight text-balance delay-60"
+					className="max-w-[16ch] animate-fade-up text-[70px]/[72px] font-extrabold tracking-[-1.8px]
+						text-balance delay-60"
 				>
 					Never run out of{" "}
-					<span className="font-serif font-extrabold text-vitastock-218-100-39/88 italic">
-						essential drugs
-					</span>{" "}
+					<span className="font-fraunces text-vitastock-222-83-52 italic">essential drugs</span>{" "}
 					again.
 				</h1>
 
-				<p
-					className="mt-6 max-w-[567px] animate-fade-up text-[20px] font-medium text-balance delay-120
-						md:text-xl"
-				>
+				<p className="mt-6 max-w-[567px] animate-fade-up text-[18px] font-medium delay-120">
 					Real-time stock tracking, expiry alerts, and fast inventory workflows, built for busy
 					pharmacies and dispensaries.
 				</p>
@@ -48,6 +43,21 @@ function HomePage() {
 				>
 					<ImageOnline src={heroImage} alt="Hero Image" className="rounded-[20px] bg-cover" />
 				</div>
+			</section>
+
+			<section className="flex flex-col items-center py-[64px] pt-4 text-center text-black">
+				<p className="text-[14px] font-bold text-vitastock-222-83-52 uppercase">The Problem</p>
+				<h2
+					className="max-w-[18ch] animate-fade-up text-[70px]/[72px] font-extrabold tracking-tight
+						text-balance delay-60"
+				>
+					Managing inventory shouldn't feel{" "}
+					<span className="font-fraunces text-vitastock-222-83-52 italic">this hard.</span>
+				</h2>
+				<p className="mt-4 max-w-[680px] animate-fade-up text-[18px] font-medium delay-120">
+					Between serving patients and handling daily operations, keeping track of stock manually
+					leads to mistakes, delays, and lost revenue.
+				</p>
 			</section>
 		</Main>
 	);

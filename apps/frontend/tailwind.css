@@ -6,11 +6,12 @@
 /* App Colors        */
 /*-------------------*/
 @theme {
+	--color-vitastock-222-83-52: hsl(222, 83%, 52%);
+	--color-vitastock-218-100-39: hsl(218, 100%, 39%);
 	--color-vitastock-225-34-44: hsl(225, 34%, 44%);
 	--color-vitastock-226-100-84: hsl(226, 100%, 84%);
-	--color-vitastock-218-100-39: hsl(218, 100%, 39%);
-	--color-vitastock-218-100-33: hsl(218, 100%, 33%);
-	--color-body-text: hsl(230, 12%, 30%);
+
+	--color-vitastock-body-color: hsl(230, 12%, 30%);
 }
 
 /* ------------------*/
@@ -25,7 +26,8 @@
 	--breakpoint-xl: 1280px;
 
 	/*--- Fonts ---*/
-	--font-manrope: "Manrope", sans-serif;
+	--font-bricolage-grotesque: "Bricolage Grotesque", sans-serif;
+	--font-fraunces: "Fraunces", serif;
 	--font-inter: "Inter", sans-serif;
 }
 
@@ -163,7 +165,7 @@
 		min-height: 100%;
 		line-height: 1.5;
 		font-family: var(--font-inter);
-		color: var(--color-body-text);
+		color: var(--color-vitastock-body-color);
 	}
 
 	h1,
@@ -172,7 +174,7 @@
 	h4,
 	h5,
 	h6 {
-		font-family: var(--font-manrope);
+		font-family: var(--font-bricolage-grotesque);
 	}
 
 	img {
@@ -194,7 +196,7 @@
 		position: absolute;
 		bottom: 20px;
 		left: 50%;
-		background-color: var(--color-vitastock-218-100-33);
+		background-color: var(--color-vitastock-218-100-39);
 		opacity: 0;
 		transform: translateX(-50%);
 		height: 2px;

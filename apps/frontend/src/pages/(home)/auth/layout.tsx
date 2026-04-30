@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import { authBg, logoInverted } from "@/assets/images";
-import { ImageResponsive } from "@/components/common/Image";
+import { ImageOnline } from "@/components/common/Image";
 import { Logo } from "@/pages/-components/Logo";
 
 function AuthLayout() {
@@ -15,12 +15,10 @@ function AuthLayout() {
 						className="absolute inset-0 size-full rounded-[24px] bg-vitastock-225-34-44
 							mix-blend-multiply"
 					/>
-					<ImageResponsive
+					<ImageOnline
 						src={authBg}
 						alt="Auth Background"
-						width={600}
-						height={960}
-						className="absolute inset-0 size-full rounded-[24px] mix-blend-multiply"
+						className="absolute inset-0 size-full rounded-[24px] object-cover mix-blend-multiply"
 					/>
 				</div>
 
@@ -32,7 +30,7 @@ function AuthLayout() {
 					<h3 className="text-[36px] font-bold text-white">VitaStock</h3>
 				</Logo>
 
-				<div>
+				<div className="grow">
 					<h3 className="text-[64px]/[70px] font-medium tracking-[-1.6px] text-white">
 						Stay in control of your pharmacy inventory
 					</h3>

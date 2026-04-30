@@ -74,7 +74,7 @@ function VerifyEmailPage() {
 					</Form.Submit>
 
 					<div className="flex flex-col items-center gap-2 text-center">
-						<p className="text-[14px] text-body-text">Didn't receive the code?</p>
+						<p className="text-[14px]">Didn't receive the code?</p>
 						<Button theme="secondary-outline" className="h-9">
 							Resend Code
 						</Button>

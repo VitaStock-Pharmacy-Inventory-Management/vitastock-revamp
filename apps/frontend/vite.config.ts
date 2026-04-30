@@ -10,8 +10,8 @@ export default defineConfig({
 		tailwindcss(),
 		monicon(),
 		setupPlugins({
-			format: ["avif"],
-			include: /^[^?]+\.(png|jpg|svg)\?.*responsive.*$/,
+			format: ["webp"],
+			include: /^[^?]+\.(png|jpg)\?.*responsive.*$/,
 			lqip: { type: "thumbhash" },
 			w: [640, 1200],
 		}),

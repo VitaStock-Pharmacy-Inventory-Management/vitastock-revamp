@@ -63,13 +63,13 @@ const buttonVariants = tv({
 		},
 
 		theme: {
-			primary: "bg-vitastock-218-100-39 text-white hover:bg-vitastock-218-100-39/90",
+			primary: "bg-vitastock-222-83-52 text-white hover:bg-vitastock-222-83-52/90",
 
-			"primary-ghost": `bg-transparent text-vitastock-218-100-39 hover:bg-vitastock-226-100-84/50
-			hover:text-vitastock-218-100-33`,
+			"primary-ghost": `bg-transparent text-vitastock-222-83-52 hover:bg-vitastock-226-100-84/50
+			hover:text-vitastock-218-100-39`,
 
-			"primary-outline": `border-[1.5px] border-vitastock-218-100-39 bg-transparent
-			text-vitastock-218-100-39 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]`,
+			"primary-outline": `border-[1.5px] border-vitastock-222-83-52 bg-transparent
+			text-vitastock-222-83-52 shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]`,
 
 			"secondary-outline": `border-[1.5px] border-[hsl(231,20%,80%)] bg-transparent text-black
 			shadow-[0_1px_2px_hsl(0,0%,0%,0.05)]`,
