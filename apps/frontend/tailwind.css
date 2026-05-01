@@ -26,9 +26,9 @@
 	--breakpoint-xl: 1280px;
 
 	/*--- Fonts ---*/
-	--font-bricolage-grotesque: "Bricolage Grotesque", sans-serif;
+	--font-bricolage-grotesque: "Bricolage Grotesque", "Inter", "system-ui", sans-serif;
 	--font-fraunces: "Fraunces", serif;
-	--font-inter: "Inter", sans-serif;
+	--font-inter: "Inter", "system-ui", sans-serif;
 }
 
 /* ------------------*/
@@ -43,6 +43,9 @@
 
 	--color-shadcn-secondary: hsl(210, 40%, 96.1%);
 	--color-shadcn-secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+
+	--color-shadcn-card: hsl(0, 0%, 100%);
+	--color-shadcn-card-foreground: hsl(0, 0%, 0%);
 
 	--color-shadcn-popover: hsl(0, 0%, 100%);
 	--color-shadcn-popover-foreground: hsl(222.2, 47.4%, 11.2%);
