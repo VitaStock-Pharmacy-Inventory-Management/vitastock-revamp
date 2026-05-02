@@ -18,7 +18,7 @@ export type ButtonProps = InferProps<"button">
 	>;
 
 const buttonVariants = tv({
-	base: "flex items-center justify-center gap-2 rounded-[10px] text-[14px] font-medium",
+	base: "flex w-fit items-center justify-center gap-2 rounded-[10px] text-[14px] font-medium",
 
 	compoundVariants: [
 		{

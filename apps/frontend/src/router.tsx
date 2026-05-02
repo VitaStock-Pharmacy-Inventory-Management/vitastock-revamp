@@ -2,14 +2,17 @@ import { lazy } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router";
 import { SonnerToaster } from "./components/common/Toaster";
 import { Providers } from "./Providers";
+import ErrorPage from "./pages/error";
 
 /* Layouts */
 const RootLayout = lazy(() => import("./pages/layout"));
 const HomeLayout = lazy(() => import("./pages/(home)/layout"));
 const AuthLayout = lazy(() => import("./pages/(home)/auth/layout"));
 
+const NotFoundPage = lazy(() => import("./pages/not-found"));
+
 const routes = createRoutesFromElements(
-	<Route Component={RootLayout}>
+	<Route Component={RootLayout} errorElement={<ErrorPage />}>
 		<Route Component={HomeLayout}>
 			<Route path="/" Component={lazy(() => import("./pages/(home)/page"))} />
 		</Route>
@@ -48,7 +51,7 @@ const routes = createRoutesFromElements(
 		</Route> */}
 
 		{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-		<Route path="*" Component={lazy(() => import("./pages/not-found"))} />
+		<Route path="*" Component={NotFoundPage} />
 	</Route>
 );
 

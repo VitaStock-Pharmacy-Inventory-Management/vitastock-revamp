@@ -1,10 +1,10 @@
 import { tw } from "@zayne-labs/toolkit-core";
-import { ForWithWrapper } from "@zayne-labs/ui-react/common/for";
-import { heroImage } from "@/assets/images";
+import { appDashboardImg, appSignupImg, heroImg } from "@/assets/images";
+import { ForWithWrapper } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
 import { ImageOnline } from "@/components/common/Image";
 import { NavLink } from "@/components/common/NavLink";
-import { Button } from "@/components/ui";
+import { Button } from "@/components/ui/button";
 import { cnJoin } from "@/lib/utils/cn";
 import { Main } from "./-components/Main";
 
@@ -73,6 +73,13 @@ const problems = [
 	},
 ];
 
+const bullets = [
+	"Log stock in seconds",
+	"See what's low instantly",
+	"Get alerted before drugs expire",
+	"Always know what's available",
+];
+
 function HomePage() {
 	return (
 		<Main>
@@ -93,7 +100,7 @@ function HomePage() {
 
 				<div className="mt-8 flex animate-fade-up flex-col items-center gap-4 delay-180">
 					<Button
-						className="rounded-full
+						className="rounded-full px-8
 							shadow-[0_20px_60px_-10px_theme(--color-vitastock-218-100-39/0.35)]"
 						asChild={true}
 					>
@@ -112,17 +119,20 @@ function HomePage() {
 						bg-shadcn-muted p-2 shadow-lg"
 				>
 					<ImageOnline
-						src={heroImage}
+						src={heroImg}
 						alt="Hero Image"
 						width={912}
 						height={896}
+						priority={true}
 						className="rounded-[20px] bg-cover"
 					/>
 				</div>
 			</section>
 
-			<section className="flex flex-col items-center py-[64px] pt-4 text-black">
-				<p className="text-[14px] font-bold text-vitastock-222-83-52 uppercase">The Problem</p>
+			<section className="flex flex-col items-center py-[80px] text-black">
+				<p className="text-[14px] font-bold tracking-wider text-vitastock-222-83-52 uppercase">
+					The Problem
+				</p>
 				<h2
 					className="max-w-[18ch] animate-fade-up text-center text-[70px]/[72px] font-extrabold
 						tracking-tight text-balance delay-60"
@@ -208,6 +218,78 @@ function HomePage() {
 						);
 					}}
 				/>
+			</section>
+
+			<section
+				id="solution"
+				className="flex flex-col items-center gap-12 py-[80px] text-black lg:flex-row lg:gap-20"
+			>
+				<div className="relative aspect-5/4 w-full">
+					<span
+						className="absolute top-6 right-0 h-[88%] w-[78%] rounded-4xl bg-vitastock-222-83-52/10"
+					/>
+
+					<span
+						className="absolute top-0 left-0 w-[58%] overflow-hidden rounded-2xl bg-shadcn-card
+							shadow-xl ring-1 ring-shadcn-border"
+					>
+						<ImageOnline src={appSignupImg} alt="VitaStock sign up screen" className="w-full" />
+					</span>
+
+					<span
+						className="absolute right-0 bottom-0 w-[68%] overflow-hidden rounded-2xl bg-shadcn-card
+							shadow-2xl ring-1 ring-shadcn-border"
+					>
+						<ImageOnline
+							src={appDashboardImg}
+							alt="VitaStock dashboard screen"
+							className="block w-full"
+						/>
+					</span>
+				</div>
+
+				<div>
+					<p className="text-[14px] font-bold tracking-wider text-vitastock-222-83-52 uppercase">
+						The solution
+					</p>
+					<h2
+						className="mt-3 max-w-[18ch] animate-fade-up text-[70px]/[72px] font-extrabold
+							tracking-tight text-balance delay-60"
+					>
+						A simpler way to manage{" "}
+						<span className="font-fraunces text-vitastock-222-83-52 italic">pharmacy inventory</span>
+					</h2>
+
+					<p className="mt-5 text-[18px]">
+						VitaStock replaces notebooks, spreadsheets and guesswork with one simple, dependable
+						workflow, so essential drugs are always in stock and nothing expires on the shelf.
+					</p>
+
+					<ul className="mt-7 flex flex-col gap-3">
+						{bullets.map((bullet) => (
+							<li key={bullet} className="flex items-start gap-3 text-base">
+								<span
+									className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full
+										bg-vitastock-222-83-52/10 text-vitastock-222-83-52"
+								>
+									<IconBox icon="lucide:check" className="size-3.5" />
+								</span>
+								<p className="text-black">{bullet}</p>
+							</li>
+						))}
+					</ul>
+
+					<Button
+						className="mt-9 rounded-full px-8
+							shadow-[0_20px_60px_-10px_theme(--color-vitastock-218-100-39/0.35)]"
+						asChild={true}
+					>
+						<NavLink to="/auth/signup">
+							Get Started for Free
+							<IconBox icon="lucide:arrow-right" />
+						</NavLink>
+					</Button>
+				</div>
 			</section>
 		</Main>
 	);
