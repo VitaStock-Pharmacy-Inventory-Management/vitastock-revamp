@@ -1,5 +1,14 @@
 import { tw } from "@zayne-labs/toolkit-core";
-import { appDashboardImg, appSignupImg, heroImg } from "@/assets/images";
+import { Fragment } from "react";
+import {
+	appDashboardImg,
+	appSignupImg,
+	heroImg,
+	howAddStockImg,
+	howAlertsImg,
+	howTrackImg,
+	SquiggleArrowIcon,
+} from "@/assets/images";
 import { ForWithWrapper } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
 import { ImageOnline } from "@/components/common/Image";
@@ -80,6 +89,27 @@ const bullets = [
 	"Always know what's available",
 ];
 
+const howItWorksSteps = [
+	{
+		alt: "Pharmacist uploading stock inventory data",
+		desc: "Set up your inventory quickly and conveniently with a simple drug list.",
+		image: howAddStockImg,
+		title: "Add or import your drugs",
+	},
+	{
+		alt: "Pharmacist reviewing live inventory dashboard on a tablet",
+		desc: "Stock-in and stock-out actions take just seconds.",
+		image: howTrackImg,
+		title: "Log stock as it comes in or goes out",
+	},
+	{
+		alt: "Smartphone showing a low stock notification alert",
+		desc: "Receive notifications for low stock and nearing expiry, and stay in control.",
+		image: howAlertsImg,
+		title: "Get automatic alerts",
+	},
+];
+
 function HomePage() {
 	return (
 		<Main>
@@ -129,8 +159,11 @@ function HomePage() {
 				</div>
 			</section>
 
-			<section className="flex flex-col items-center py-[80px] text-black">
-				<p className="text-[14px] font-bold tracking-wider text-vitastock-222-83-52 uppercase">
+			<section id="problem" className="flex flex-col items-center py-[80px] text-black">
+				<p
+					className="text-center text-[14px] font-bold tracking-wider text-vitastock-222-83-52
+						uppercase"
+				>
 					The Problem
 				</p>
 				<h2
@@ -222,7 +255,7 @@ function HomePage() {
 
 			<section
 				id="solution"
-				className="flex flex-col items-center gap-12 py-[80px] text-black lg:flex-row lg:gap-20"
+				className="flex flex-col items-center gap-20 py-[80px] text-black lg:flex-row"
 			>
 				<div className="relative aspect-5/4 w-full">
 					<span
@@ -249,9 +282,13 @@ function HomePage() {
 				</div>
 
 				<div>
-					<p className="text-[14px] font-bold tracking-wider text-vitastock-222-83-52 uppercase">
+					<p
+						className="text-center text-[14px] font-bold tracking-wider text-vitastock-222-83-52
+							uppercase"
+					>
 						The solution
 					</p>
+
 					<h2
 						className="mt-3 max-w-[18ch] animate-fade-up text-[70px]/[72px] font-extrabold
 							tracking-tight text-balance delay-60"
@@ -265,19 +302,21 @@ function HomePage() {
 						workflow, so essential drugs are always in stock and nothing expires on the shelf.
 					</p>
 
-					<ul className="mt-7 flex flex-col gap-3">
-						{bullets.map((bullet) => (
+					<ForWithWrapper
+						className="mt-7 flex flex-col gap-3"
+						each={bullets}
+						renderItem={(bullet) => (
 							<li key={bullet} className="flex items-start gap-3 text-base">
 								<span
-									className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full
+									className="grid size-6 shrink-0 place-items-center rounded-full
 										bg-vitastock-222-83-52/10 text-vitastock-222-83-52"
 								>
-									<IconBox icon="lucide:check" className="size-3.5" />
+									<IconBox icon="lucide:check" className="size-3.5 *:stroke-3" />
 								</span>
 								<p className="text-black">{bullet}</p>
 							</li>
-						))}
-					</ul>
+						)}
+					/>
 
 					<Button
 						className="mt-9 rounded-full px-8
@@ -290,6 +329,77 @@ function HomePage() {
 						</NavLink>
 					</Button>
 				</div>
+			</section>
+
+			<section id="how-it-works" className="flex flex-col gap-20 py-[80px] text-black">
+				<div className="flex flex-col items-center gap-5 text-center">
+					<span
+						className="inline-flex items-center gap-2 rounded-full border
+							border-vitastock-222-83-52/20 bg-vitastock-222-83-52/5 px-4 py-1.5 text-xs font-bold
+							tracking-wider text-vitastock-222-83-52 uppercase"
+					>
+						<span className="size-1.5 rounded-full bg-vitastock-222-83-52" />
+						How it works
+					</span>
+					<h2
+						className="animate-fade-up text-center text-[70px]/[72px] font-extrabold tracking-tight
+							text-balance delay-60"
+					>
+						Stress Free{" "}
+						<span className="font-fraunces text-vitastock-222-83-52 italic">Operations.</span>
+					</h2>
+					<p className="text-[18px] text-balance">
+						From your first upload to your first saved expiry — VitaStock takes the chaos out of
+						pharmacy inventory in three simple steps.
+					</p>
+				</div>
+
+				<ForWithWrapper
+					each={howItWorksSteps}
+					className="mt-20 grid grid-cols-[1fr_auto_1fr_auto_1fr] gap-x-4
+						[--image-container-height:250px]"
+					renderItem={(step, index) => (
+						<Fragment key={step.title}>
+							<li className="flex columns-[1fr] flex-col items-center gap-8 text-center">
+								<span
+									className="rounded-full border-[1.5px] border-dashed border-shadcn-border p-3
+										ring-1 ring-shadcn-border"
+								>
+									<div className="overflow-hidden rounded-full">
+										<ImageOnline
+											src={step.image}
+											alt={step.alt}
+											width={768}
+											height={768}
+											className="h-(--image-container-height) rounded-full object-cover"
+										/>
+									</div>
+								</span>
+
+								<div className="flex grow flex-col items-center justify-between gap-3">
+									<p className="text-[12px] font-bold tracking-[0.2em] uppercase">
+										Step — 0{index + 1}
+									</p>
+
+									<h3
+										className="font-bricolage-grotesque text-[24px] font-extrabold tracking-tight
+											text-balance"
+									>
+										{step.title}
+									</h3>
+									<p className="max-w-[270px] text-center text-pretty">{step.desc}</p>
+								</div>
+							</li>
+
+							{index < howItWorksSteps.length - 1 && (
+								<SquiggleArrowIcon
+									className="mt-[calc(var(--image-container-height)/2)]
+										text-vitastock-222-83-52/70"
+								/>
+							)}
+						</Fragment>
+					)}
+				/>
 			</section>
 		</Main>
 	);

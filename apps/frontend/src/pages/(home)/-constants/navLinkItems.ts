@@ -1,11 +1,11 @@
 export const navLinkItems = [
 	{
-		href: "/#problems",
-		title: "Problems",
+		href: "/#problem",
+		title: "Problem",
 	},
 	{
-		href: "/#solutions",
-		title: "Solutions",
+		href: "/#solution",
+		title: "Solution",
 	},
 	{
 		href: "/#how-it-works",

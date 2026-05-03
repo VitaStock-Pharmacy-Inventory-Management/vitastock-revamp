@@ -1,11 +1,11 @@
 import { lazy } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router";
 import { SonnerToaster } from "./components/common/Toaster";
-import { Providers } from "./Providers";
 import ErrorPage from "./pages/error";
+import RootLayout from "./pages/layout";
+import { Providers } from "./Providers";
 
 /* Layouts */
-const RootLayout = lazy(() => import("./pages/layout"));
 const HomeLayout = lazy(() => import("./pages/(home)/layout"));
 const AuthLayout = lazy(() => import("./pages/(home)/auth/layout"));
 

@@ -4,3 +4,7 @@ export { default as authBg } from "./auth-bg.svg";
 export { default as heroImg } from "./hero-image.png";
 export { default as logoInverted } from "./logo-inverted.svg";
 export { default as logo } from "./logo.svg";
+export { default as howAddStockImg } from "./how-add-stock.jpg";
+export { default as howTrackImg } from "./how-track.jpg";
+export { default as howAlertsImg } from "./how-alerts.jpg";
+export * from "./SquiggleArrowIcon.tsx";

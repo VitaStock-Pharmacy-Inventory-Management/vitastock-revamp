@@ -26,10 +26,10 @@ function NotFoundPage() {
 					</div>
 
 					<span
-						className="relative grid size-30 place-items-center rounded-2xl border
+						className="relative isolate grid size-30 place-items-center rounded-2xl border
 							border-[hsl(231,20%,80%)] bg-white shadow-xl shadow-vitastock-218-100-39/10"
 					>
-						<p className="absolute -z-1 text-[192px] font-extrabold text-[hsl(210,4%,91%,0.6)]">
+						<p className="absolute -z-1 text-[192px] font-extrabold text-[hsl(210,4%,90%,0.6)]">
 							404
 						</p>
 						<IconBox
