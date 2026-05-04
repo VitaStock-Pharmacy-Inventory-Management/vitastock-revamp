@@ -151,7 +151,7 @@ function HomePage() {
 						width={912}
 						height={896}
 						priority={true}
-						className="rounded-[20px] bg-cover"
+						className="rounded-[20px] object-cover"
 					/>
 				</span>
 			</section>
@@ -258,24 +258,40 @@ function HomePage() {
 				className="flex flex-col items-center gap-20 px-[clamp(24px,7vw,100px)] py-[80px] text-black
 					lg:flex-row"
 			>
-				<div className="relative aspect-5/4 w-full">
+				<div className="group relative aspect-5/4 w-full perspective-distant">
 					<span
 						className="absolute top-6 right-0 h-[88%] w-[78%] rounded-4xl
 							bg-vitastock-primary-main/10"
 					/>
 
 					<span
-						className="absolute top-0 left-0 w-[58%] overflow-hidden rounded-2xl bg-shadcn-card
-							shadow-xl ring-1 ring-shadcn-border"
+						className="absolute top-0 left-0 w-[78%] overflow-hidden rounded-2xl bg-shadcn-card
+							shadow-xl ring-1 ring-shadcn-border transition-all duration-700 ease-out
+							group-hover:-translate-2
+							group-hover:transform-[translate3d(-8px,-8px,0)_rotateX(2deg)_rotateY(-3deg)]
+							group-hover:shadow-2xl"
 					>
-						<ImageOnline src={appSignupImg} alt="VitaStock sign up screen" className="w-full" />
+						<ImageOnline
+							src={appSignupImg}
+							alt="VitaStock sign up screen"
+							className="w-full object-cover transition-[scale] duration-700 ease-out
+								group-hover:scale-[1.03]"
+						/>
 					</span>
 
 					<span
-						className="absolute right-0 bottom-0 w-[68%] overflow-hidden rounded-2xl bg-shadcn-card
-							shadow-2xl ring-1 ring-shadcn-border"
+						className="absolute right-0 bottom-0 w-[62%] overflow-hidden rounded-2xl bg-shadcn-card
+							shadow-2xl ring-1 ring-shadcn-border transition-all duration-700 ease-out
+							group-hover:translate-x-3 group-hover:translate-y-2
+							group-hover:transform-[translate3d(12px,8px,0)_rotateX(-2deg)_rotateY(3deg)]
+							group-hover:shadow-[0_25px_60px_-15px_theme(--color-vitastock-primary-main/0.5)]"
 					>
-						<ImageOnline src={appDashboardImg} alt="VitaStock dashboard screen" className="w-full" />
+						<ImageOnline
+							src={appDashboardImg}
+							alt="VitaStock dashboard screen"
+							className="w-full object-cover transition-[scale] duration-700 ease-out
+								group-hover:scale-[1.03]"
+						/>
 					</span>
 				</div>
 
@@ -476,29 +492,31 @@ function HomePage() {
 
 					<span
 						className="absolute top-0 left-0 w-[78%] overflow-hidden rounded-2xl bg-shadcn-card
-							shadow-xl ring-1 ring-white/10 transition-all duration-700 ease-out
-							will-change-transform group-hover:-translate-2
+							shadow-xl ring-1 ring-shadcn-border transition-all duration-700 ease-out
+							group-hover:-translate-2
 							group-hover:transform-[translate3d(-8px,-8px,0)_rotateX(2deg)_rotateY(-3deg)]
 							group-hover:shadow-2xl"
 					>
 						<ImageOnline
 							src={appDashboardAlertsImg}
 							alt="VitaStock alerts screen"
-							className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+							className="w-full object-cover transition-[scale] duration-700 ease-out
+								group-hover:scale-[1.03]"
 						/>
 					</span>
 
 					<span
 						className="absolute right-0 bottom-0 w-[62%] overflow-hidden rounded-2xl bg-shadcn-card
-							shadow-2xl ring-1 ring-white/10 transition-all duration-700 ease-out
-							will-change-transform group-hover:translate-x-3 group-hover:translate-y-2
+							shadow-2xl ring-1 ring-shadcn-border transition-all duration-700 ease-out
+							group-hover:translate-x-3 group-hover:translate-y-2
 							group-hover:transform-[translate3d(12px,8px,0)_rotateX(-2deg)_rotateY(3deg)]
 							group-hover:shadow-[0_25px_60px_-15px_theme(--color-vitastock-primary-main/0.5)]"
 					>
 						<ImageOnline
 							src={appDashboardHeroImg}
 							alt="VitaStock inventory dashboard"
-							className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+							className="w-full object-cover transition-[scale] duration-700 ease-out
+								group-hover:scale-[1.03]"
 						/>
 					</span>
 				</div>
@@ -542,7 +560,7 @@ function HomePage() {
 						<ImageOnline
 							src={appDashboardHeroImg}
 							alt="VitaStock inventory dashboard preview"
-							className="size-full rounded-[16px] bg-cover shadow-2xl ring-1 ring-shadcn-border"
+							className="size-full rounded-[16px] object-cover shadow-2xl ring-1 ring-shadcn-border"
 						/>
 					</span>
 				</div>
