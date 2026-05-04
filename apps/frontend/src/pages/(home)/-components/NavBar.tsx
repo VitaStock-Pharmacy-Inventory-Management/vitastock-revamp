@@ -43,7 +43,7 @@ function DesktopNavigation(props: { className?: string }) {
 						key={linkItem.title}
 						transitionType="regular"
 						to={linkItem.href}
-						className="hover:text-vitastock-218-100-39"
+						className="hover:text-vitastock-primary-dark"
 					>
 						{linkItem.title}
 					</NavLink>

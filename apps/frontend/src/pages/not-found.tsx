@@ -11,7 +11,7 @@ function NotFoundPage() {
 		<Main className="relative">
 			<section className="relative isolate flex flex-col items-center gap-10 text-center">
 				<span
-					className="absolute right-[256px] -z-1 size-[384px] bg-vitastock-218-100-39/5
+					className="absolute right-[256px] -z-1 size-[384px] bg-vitastock-primary-dark/5
 						mix-blend-overlay blur-3xl"
 				/>
 				<span
@@ -27,14 +27,14 @@ function NotFoundPage() {
 
 					<span
 						className="relative isolate grid size-30 place-items-center rounded-2xl border
-							border-[hsl(231,20%,80%)] bg-white shadow-xl shadow-vitastock-218-100-39/10"
+							border-[hsl(231,20%,80%)] bg-white shadow-xl shadow-vitastock-primary-dark/10"
 					>
 						<p className="absolute -z-1 text-[192px] font-extrabold text-[hsl(210,4%,90%,0.6)]">
 							404
 						</p>
 						<IconBox
 							icon="material-symbols:troubleshoot"
-							className="size-10 text-vitastock-218-100-39"
+							className="size-10 text-vitastock-primary-dark"
 						/>
 					</span>
 				</div>

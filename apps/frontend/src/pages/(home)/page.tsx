@@ -1,6 +1,8 @@
 import { tw } from "@zayne-labs/toolkit-core";
 import { Fragment } from "react";
 import {
+	appDashboardAlertsImg,
+	appDashboardHeroImg,
 	appDashboardImg,
 	appSignupImg,
 	heroImg,
@@ -22,7 +24,7 @@ const problems = [
 		accent: "Lost sale",
 		accentIcon: "lucide:trending-down",
 		classNames: {
-			blur: tw`bg-vitastock-222-83-52/20`,
+			blur: tw`bg-vitastock-primary-main/20`,
 			card: tw`border-shadcn-foreground bg-shadcn-foreground text-shadcn-background`,
 			chip: tw`bg-shadcn-background/10 text-shadcn-background/90 ring-1 ring-shadcn-background/15`,
 			desc: tw`text-shadcn-background/70`,
@@ -68,7 +70,7 @@ const problems = [
 		accentIcon: "lucide:alert-triangle",
 		classNames: {
 			blur: tw`bg-white/20`,
-			card: tw`border-vitastock-222-83-52 bg-vitastock-222-83-52 text-shadcn-primary-foreground`,
+			card: tw`border-vitastock-primary-main bg-vitastock-primary-main text-shadcn-primary-foreground`,
 			chip: tw`bg-shadcn-primary-foreground/10 text-shadcn-primary-foreground ring-1
 			ring-shadcn-primary-foreground/20`,
 			desc: tw`text-shadcn-primary-foreground/80`,
@@ -80,13 +82,6 @@ const problems = [
 		icon: "lucide:eye-off",
 		title: "No clear view of what's low",
 	},
-];
-
-const bullets = [
-	"Log stock in seconds",
-	"See what's low instantly",
-	"Get alerted before drugs expire",
-	"Always know what's available",
 ];
 
 const howItWorksSteps = [
@@ -113,13 +108,15 @@ const howItWorksSteps = [
 function HomePage() {
 	return (
 		<Main>
-			<section className="flex w-full flex-col items-center py-[64px] text-black">
+			<section
+				className="flex w-full flex-col items-center px-[clamp(24px,7vw,100px)] py-[64px] text-black"
+			>
 				<h1
 					className="max-w-[16ch] animate-fade-up text-center text-[70px]/[72px] font-extrabold
 						tracking-[-1.8px] text-balance delay-60"
 				>
 					Never run out of{" "}
-					<span className="font-fraunces text-vitastock-222-83-52 italic">essential drugs</span>{" "}
+					<span className="font-fraunces text-vitastock-primary-main italic">essential drugs</span>{" "}
 					again.
 				</h1>
 
@@ -128,10 +125,10 @@ function HomePage() {
 					pharmacies and dispensaries.
 				</p>
 
-				<div className="mt-8 flex animate-fade-up flex-col items-center gap-4 delay-180">
+				<div className="mt-9 flex animate-fade-up flex-col items-center gap-4 delay-180">
 					<Button
 						className="rounded-full px-8
-							shadow-[0_20px_60px_-10px_theme(--color-vitastock-218-100-39/0.35)]"
+							shadow-[0_20px_60px_-10px_theme(--color-vitastock-primary-dark/0.35)]"
 						asChild={true}
 					>
 						<NavLink to="/auth/signup">
@@ -144,7 +141,7 @@ function HomePage() {
 					</p>
 				</div>
 
-				<div
+				<span
 					className="mt-10 w-full max-w-[900px] rounded-[28px] border border-shadcn-border/60
 						bg-shadcn-muted p-2 shadow-lg"
 				>
@@ -156,12 +153,15 @@ function HomePage() {
 						priority={true}
 						className="rounded-[20px] bg-cover"
 					/>
-				</div>
+				</span>
 			</section>
 
-			<section id="problem" className="flex flex-col items-center py-[80px] text-black">
+			<section
+				id="problem"
+				className="flex flex-col items-center px-[clamp(24px,7vw,100px)] py-[80px] text-black"
+			>
 				<p
-					className="text-center text-[14px] font-bold tracking-wider text-vitastock-222-83-52
+					className="text-center text-[14px] font-bold tracking-wider text-vitastock-primary-main
 						uppercase"
 				>
 					The Problem
@@ -171,7 +171,7 @@ function HomePage() {
 						tracking-tight text-balance delay-60"
 				>
 					Managing inventory shouldn't feel{" "}
-					<span className="font-fraunces text-vitastock-222-83-52 italic">this hard.</span>
+					<span className="font-fraunces text-vitastock-primary-main italic">this hard.</span>
 				</h2>
 				<p className="mt-4 max-w-[680px] animate-fade-up text-center text-[18px] font-medium delay-120">
 					Between serving patients and handling daily operations, keeping track of stock manually
@@ -255,11 +255,13 @@ function HomePage() {
 
 			<section
 				id="solution"
-				className="flex flex-col items-center gap-20 py-[80px] text-black lg:flex-row"
+				className="flex flex-col items-center gap-20 px-[clamp(24px,7vw,100px)] py-[80px] text-black
+					lg:flex-row"
 			>
 				<div className="relative aspect-5/4 w-full">
 					<span
-						className="absolute top-6 right-0 h-[88%] w-[78%] rounded-4xl bg-vitastock-222-83-52/10"
+						className="absolute top-6 right-0 h-[88%] w-[78%] rounded-4xl
+							bg-vitastock-primary-main/10"
 					/>
 
 					<span
@@ -273,17 +275,13 @@ function HomePage() {
 						className="absolute right-0 bottom-0 w-[68%] overflow-hidden rounded-2xl bg-shadcn-card
 							shadow-2xl ring-1 ring-shadcn-border"
 					>
-						<ImageOnline
-							src={appDashboardImg}
-							alt="VitaStock dashboard screen"
-							className="block w-full"
-						/>
+						<ImageOnline src={appDashboardImg} alt="VitaStock dashboard screen" className="w-full" />
 					</span>
 				</div>
 
 				<div>
 					<p
-						className="text-center text-[14px] font-bold tracking-wider text-vitastock-222-83-52
+						className="text-center text-[14px] font-bold tracking-wider text-vitastock-primary-main
 							uppercase"
 					>
 						The solution
@@ -294,33 +292,40 @@ function HomePage() {
 							tracking-tight text-balance delay-60"
 					>
 						A simpler way to manage{" "}
-						<span className="font-fraunces text-vitastock-222-83-52 italic">pharmacy inventory</span>
+						<span className="font-fraunces text-vitastock-primary-main italic">
+							pharmacy inventory
+						</span>
 					</h2>
 
-					<p className="mt-5 text-[18px]">
+					<p className="mt-5 text-[18px] text-pretty">
 						VitaStock replaces notebooks, spreadsheets and guesswork with one simple, dependable
 						workflow, so essential drugs are always in stock and nothing expires on the shelf.
 					</p>
 
 					<ForWithWrapper
 						className="mt-7 flex flex-col gap-3"
-						each={bullets}
-						renderItem={(bullet) => (
-							<li key={bullet} className="flex items-start gap-3 text-base">
+						each={[
+							"Log stock in seconds",
+							"See what's low instantly",
+							"Get alerted before drugs expire",
+							"Always know what's available",
+						]}
+						renderItem={(item) => (
+							<li key={item} className="flex items-start gap-3 text-base">
 								<span
-									className="grid size-6 shrink-0 place-items-center rounded-full
-										bg-vitastock-222-83-52/10 text-vitastock-222-83-52"
+									className="grid size-6 shrink-0 place-content-center rounded-full
+										bg-vitastock-primary-main/10 text-vitastock-primary-main"
 								>
 									<IconBox icon="lucide:check" className="size-3.5 *:stroke-3" />
 								</span>
-								<p className="text-black">{bullet}</p>
+								<p className="text-black">{item}</p>
 							</li>
 						)}
 					/>
 
 					<Button
 						className="mt-9 rounded-full px-8
-							shadow-[0_20px_60px_-10px_theme(--color-vitastock-218-100-39/0.35)]"
+							shadow-[0_20px_60px_-10px_theme(--color-vitastock-primary-dark/0.35)]"
 						asChild={true}
 					>
 						<NavLink to="/auth/signup">
@@ -331,14 +336,17 @@ function HomePage() {
 				</div>
 			</section>
 
-			<section id="how-it-works" className="flex flex-col gap-20 py-[80px] text-black">
+			<section
+				id="how-it-works"
+				className="flex flex-col gap-20 px-[clamp(24px,7vw,100px)] py-[80px] text-black"
+			>
 				<div className="flex flex-col items-center gap-5 text-center">
 					<span
 						className="inline-flex items-center gap-2 rounded-full border
-							border-vitastock-222-83-52/20 bg-vitastock-222-83-52/5 px-4 py-1.5 text-xs font-bold
-							tracking-wider text-vitastock-222-83-52 uppercase"
+							border-vitastock-primary-main/20 bg-vitastock-primary-main/5 px-4 py-1.5 text-xs
+							font-bold tracking-wider text-vitastock-primary-main uppercase"
 					>
-						<span className="size-1.5 rounded-full bg-vitastock-222-83-52" />
+						<span className="size-1.5 rounded-full bg-vitastock-primary-main" />
 						How it works
 					</span>
 					<h2
@@ -346,9 +354,10 @@ function HomePage() {
 							text-balance delay-60"
 					>
 						Stress Free{" "}
-						<span className="font-fraunces text-vitastock-222-83-52 italic">Operations.</span>
+						<span className="font-fraunces text-vitastock-primary-main italic">Operations.</span>
 					</h2>
-					<p className="text-[18px] text-balance">
+
+					<p className="text-[18px] text-pretty">
 						From your first upload to your first saved expiry — VitaStock takes the chaos out of
 						pharmacy inventory in three simple steps.
 					</p>
@@ -394,12 +403,149 @@ function HomePage() {
 							{index < howItWorksSteps.length - 1 && (
 								<SquiggleArrowIcon
 									className="mt-[calc(var(--image-container-height)/2)]
-										text-vitastock-222-83-52/70"
+										text-vitastock-primary-main/70"
 								/>
 							)}
 						</Fragment>
 					)}
 				/>
+			</section>
+
+			<section
+				id="alerts"
+				className="flex items-center gap-20 bg-vitastock-primary-darker px-[clamp(24px,7vw,100px)]
+					py-[80px] text-white"
+			>
+				<div className="flex w-full flex-col gap-3">
+					<p className="text-[14px] font-bold tracking-wider text-vitastock-primary-main uppercase">
+						Smart alerts
+					</p>
+
+					<h2
+						className="animate-fade-up text-[60px]/[1] font-extrabold tracking-tight text-balance
+							delay-60"
+					>
+						Find out before{" "}
+						<span
+							className="font-fraunces text-vitastock-primary-glow italic
+								text-shadow-[0_0_30px_theme(--color-vitastock-primary-glow/0.4)]"
+						>
+							your patients do!
+						</span>
+					</h2>
+
+					<p className="mt-2 max-w-[448px] text-[18px] text-pretty text-white/70">
+						VitaStock watches your shelves around the clock. The moment something runs low or nears
+						expiry, you'll know, so you can act before it costs you a sale or a patient.
+					</p>
+
+					<ForWithWrapper
+						className="mt-7 flex flex-col gap-3"
+						each={[
+							"Low-stock alerts based on your reorder thresholds",
+							"Expiry warnings at 90, 60 and 30 days",
+							"Delivered by email or in-app",
+						]}
+						renderItem={(item) => (
+							<li key={item} className="flex items-center gap-3 text-base">
+								<span
+									className="grid size-6 shrink-0 place-items-center rounded-full
+										bg-vitastock-primary-glow/15 text-vitastock-primary-glow"
+								>
+									<IconBox icon="lucide:circle-check" className="size-4" />
+								</span>
+								<span>{item}</span>
+							</li>
+						)}
+					/>
+
+					<Button className="mt-9 rounded-full px-8 shadow-vitastock-primary-glow" asChild={true}>
+						<NavLink to="/auth/signup">
+							Get Started for Free
+							<IconBox icon="lucide:arrow-right" />
+						</NavLink>
+					</Button>
+				</div>
+
+				<div className="group relative aspect-5/4 w-full perspective-distant">
+					<span
+						className="absolute top-6 right-0 h-[88%] w-[78%] rounded-4xl
+							bg-vitastock-primary-main/15 transition-transform duration-700 ease-out
+							group-hover:scale-[1.02]"
+					/>
+
+					<span
+						className="absolute top-0 left-0 w-[78%] overflow-hidden rounded-2xl bg-shadcn-card
+							shadow-xl ring-1 ring-white/10 transition-all duration-700 ease-out
+							will-change-transform group-hover:-translate-2
+							group-hover:transform-[translate3d(-8px,-8px,0)_rotateX(2deg)_rotateY(-3deg)]
+							group-hover:shadow-2xl"
+					>
+						<ImageOnline
+							src={appDashboardAlertsImg}
+							alt="VitaStock alerts screen"
+							className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+						/>
+					</span>
+
+					<span
+						className="absolute right-0 bottom-0 w-[62%] overflow-hidden rounded-2xl bg-shadcn-card
+							shadow-2xl ring-1 ring-white/10 transition-all duration-700 ease-out
+							will-change-transform group-hover:translate-x-3 group-hover:translate-y-2
+							group-hover:transform-[translate3d(12px,8px,0)_rotateX(-2deg)_rotateY(3deg)]
+							group-hover:shadow-[0_25px_60px_-15px_theme(--color-vitastock-primary-main/0.5)]"
+					>
+						<ImageOnline
+							src={appDashboardHeroImg}
+							alt="VitaStock inventory dashboard"
+							className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+						/>
+					</span>
+				</div>
+			</section>
+
+			<section className="px-[clamp(24px,7vw,100px)] py-[80px] text-black">
+				<div
+					className="flex items-center gap-10 rounded-[24px] bg-vitastock-primary-main/8 px-[80px]
+						py-[64px]"
+				>
+					<article className="w-full">
+						<h2
+							className="animate-fade-up text-[60px]/[1] font-extrabold tracking-tight text-balance
+								delay-60"
+						>
+							Run your pharmacy{" "}
+							<span className="font-fraunces text-vitastock-primary-main italic">
+								with confidence.
+							</span>
+						</h2>
+
+						<p className="mt-5 max-w-[448px] text-[18px] text-pretty">
+							Be among the first pharmacies to never run out of what your patients need.
+						</p>
+
+						<div className="mt-9 flex flex-col gap-4">
+							<Button className="rounded-full px-8 shadow-vitastock-primary-glow" asChild={true}>
+								<NavLink to="/auth/signup">
+									Get Started for Free
+									<IconBox icon="lucide:arrow-right" />
+								</NavLink>
+							</Button>
+
+							<p className="text-[14px] text-vitastock-body-color">
+								No complicated setup. No training required.
+							</p>
+						</div>
+					</article>
+
+					<span className="size-full">
+						<ImageOnline
+							src={appDashboardHeroImg}
+							alt="VitaStock inventory dashboard preview"
+							className="size-full rounded-[16px] bg-cover shadow-2xl ring-1 ring-shadcn-border"
+						/>
+					</span>
+				</div>
 			</section>
 		</Main>
 	);

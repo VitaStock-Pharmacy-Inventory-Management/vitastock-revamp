@@ -45,7 +45,7 @@ function VerifyEmailPage() {
 														index={index}
 														classNames={{
 															base: "size-10 rounded-[4px] text-[14px]",
-															isActive: "ring-vitastock-218-100-39/80",
+															isActive: "ring-vitastock-primary-dark/80",
 														}}
 													/>
 													{index === 2 && <InputOTP.Separator />}

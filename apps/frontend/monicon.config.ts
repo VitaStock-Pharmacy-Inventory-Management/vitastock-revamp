@@ -12,6 +12,7 @@ function getIconsArray() {
 		"lucide:chevron-down",
 		"lucide:chevron-up",
 		"lucide:check",
+		"lucide:circle-check",
 		"lucide:chevron-down",
 		"radix-icons:dash",
 		"radix-icons:dot-filled",

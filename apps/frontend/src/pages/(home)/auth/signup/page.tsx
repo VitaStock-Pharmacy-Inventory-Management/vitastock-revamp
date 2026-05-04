@@ -80,7 +80,7 @@ function SignupPage() {
 
 					<p className="text-center text-[14px]">
 						I already have an account.{" "}
-						<NavLink className="font-semibold text-vitastock-218-100-39" to="/auth/signin">
+						<NavLink className="font-semibold text-vitastock-primary-dark" to="/auth/signin">
 							Sign in
 						</NavLink>
 					</p>

@@ -43,7 +43,7 @@ function SigninPage() {
 							<NavLink
 								transitionType="regular"
 								to="/auth/forgot-password"
-								className="mt-1 self-end text-[14px] text-vitastock-218-100-39"
+								className="mt-1 self-end text-[14px] text-vitastock-primary-dark"
 							>
 								Forgot password?
 							</NavLink>
@@ -75,7 +75,7 @@ function SigninPage() {
 						I don't have an account.{" "}
 						<NavLink
 							transitionType="regular"
-							className="font-semibold text-vitastock-218-100-39"
+							className="font-semibold text-vitastock-primary-dark"
 							to="/auth/signup"
 						>
 							Sign up

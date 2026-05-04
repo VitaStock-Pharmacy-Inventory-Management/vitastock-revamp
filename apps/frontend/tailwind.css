@@ -6,8 +6,10 @@
 /* App Colors        */
 /*-------------------*/
 @theme {
-	--color-vitastock-222-83-52: hsl(222, 83%, 52%);
-	--color-vitastock-218-100-39: hsl(218, 100%, 39%);
+	--color-vitastock-primary-main: hsl(222, 83%, 52%);
+	--color-vitastock-primary-darker: hsl(226, 70%, 22%);
+	--color-vitastock-primary-glow: hsl(222, 95%, 65%);
+	--color-vitastock-primary-dark: hsl(218, 100%, 39%);
 	--color-vitastock-225-34-44: hsl(225, 34%, 44%);
 	--color-vitastock-226-100-84: hsl(226, 100%, 84%);
 
@@ -199,7 +201,7 @@
 		position: absolute;
 		bottom: 20px;
 		left: 50%;
-		background-color: var(--color-vitastock-218-100-39);
+		background-color: var(--color-vitastock-primary-dark);
 		opacity: 0;
 		transform: translateX(-50%);
 		height: 2px;

@@ -12,7 +12,7 @@ const chunkErrorDetails = {
 	actionLabel: "Reload Now",
 	bgText: "UP",
 	icon: "lucide:refresh-cw",
-	iconColor: tw`text-vitastock-218-100-39`,
+	iconColor: tw`text-vitastock-primary-dark`,
 	message: "We've updated VitaStock with new features. Please reload the page to get the latest version.",
 	title: "App Update Available",
 };
@@ -50,7 +50,7 @@ function ErrorPage() {
 		<Main className="relative min-h-svh">
 			<section className="relative isolate z-10 flex flex-col items-center gap-10 text-center">
 				<span
-					className="absolute right-0 -z-1 size-[384px] bg-vitastock-218-100-39/10 mix-blend-overlay
+					className="absolute right-0 -z-1 size-[384px] bg-vitastock-primary-dark/10 mix-blend-overlay
 						blur-3xl md:right-64"
 				/>
 				<span
@@ -66,7 +66,7 @@ function ErrorPage() {
 
 					<span
 						className="relative grid size-30 place-items-center rounded-2xl border
-							border-[hsl(231,20%,80%)] bg-white/80 shadow-xl shadow-vitastock-218-100-39/10"
+							border-[hsl(231,20%,80%)] bg-white/80 shadow-xl shadow-vitastock-primary-dark/10"
 					>
 						<p
 							className="absolute -z-1 translate-x-2 text-[192px] font-extrabold
@@ -92,7 +92,7 @@ function ErrorPage() {
 				<div className="mt-4 flex flex-col gap-4 sm:flex-row">
 					<Button
 						className="px-10 py-6 text-base shadow-xl transition-shadow hover:shadow-2xl
-							hover:shadow-vitastock-218-100-39/20"
+							hover:shadow-vitastock-primary-dark/20"
 						onClick={details.actionFn}
 					>
 						{details.actionLabel}

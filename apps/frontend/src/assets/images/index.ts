@@ -7,4 +7,6 @@ export { default as logo } from "./logo.svg";
 export { default as howAddStockImg } from "./how-add-stock.jpg";
 export { default as howTrackImg } from "./how-track.jpg";
 export { default as howAlertsImg } from "./how-alerts.jpg";
+export { default as appDashboardHeroImg } from "./app-dashboard-hero.png";
+export { default as appDashboardAlertsImg } from "./app-dashboard-alerts.png";
 export * from "./SquiggleArrowIcon.tsx";
