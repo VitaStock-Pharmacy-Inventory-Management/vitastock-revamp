@@ -7,18 +7,27 @@ function AuthLayout() {
 	return (
 		<div className="flex grow">
 			<aside
-				className="relative m-8 flex w-full max-w-[580px] flex-col gap-[64px] p-[64px]
+				className="relative m-8 flex w-full max-w-[580px] flex-col gap-[64px] rounded-[24px] p-[64px]
 					shadow-[0_8px_10px_-6px_hsl(0,0%,0%,0.1),0_20px_25px_-5px_hsl(0,0%,0%,0.1)]"
 			>
 				<div className="absolute inset-0 isolate -z-1">
 					<span
-						className="absolute inset-0 size-full rounded-[24px] bg-vitastock-225-34-44
+						className="absolute inset-0 size-full rounded-[24px]
+							bg-[linear-gradient(135deg,hsl(222,100%,15%)_0%,hsl(218,100%,39%,0.8)_100%)]
 							mix-blend-multiply"
 					/>
+
+					<span
+						className="absolute inset-0 size-full rounded-[24px]
+							bg-[linear-gradient(0deg,hsl(222,100%,15%)_0%,hsl(222,100%,15%,0)_50%,hsl(222,100%,15%,0)_100%)]
+							mix-blend-multiply"
+					/>
+
 					<ImageOnline
 						src={authBg}
 						alt="Auth Background"
-						className="absolute inset-0 size-full rounded-[24px] object-cover mix-blend-multiply"
+						className="absolute inset-0 size-full rounded-[24px] object-cover opacity-40
+							mix-blend-multiply"
 					/>
 				</div>
 
