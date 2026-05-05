@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import { IconBox } from "@/components/common/IconBox";
 import { Button } from "@/components/ui";
 import { Logo } from "./-components/Logo";
-import { Main } from "./(home)/auth/-components/Main";
+import { Main } from "./auth/-components/Main";
 
 function NotFoundPage() {
 	const navigate = useNavigate();
@@ -19,7 +19,7 @@ function NotFoundPage() {
 						blur-3xl"
 				/>
 
-				<div className="flex flex-col items-center gap-6">
+				<div className="flex flex-col items-center gap-8">
 					<div className="flex items-center gap-3">
 						<Logo width={48} className="w-12 animate-pulse" />
 						<span className="text-[28px] font-extrabold tracking-tight text-black">VitaStock</span>
@@ -29,7 +29,7 @@ function NotFoundPage() {
 						className="relative isolate grid size-30 place-items-center rounded-2xl border
 							border-[hsl(231,20%,80%)] bg-white shadow-xl shadow-vitastock-primary-dark/10"
 					>
-						<p className="absolute -z-1 text-[192px] font-extrabold text-[hsl(210,4%,90%,0.6)]">
+						<p className="absolute -z-1 text-[192px] font-extrabold text-[hsl(215,20%,85%,0.75)]">
 							404
 						</p>
 						<IconBox

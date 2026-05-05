@@ -5,7 +5,7 @@ import { IconBox } from "@/components/common/IconBox";
 import { Button } from "@/components/ui";
 import { cnJoin } from "@/lib/utils/cn";
 import { Logo } from "@/pages/-components/Logo";
-import { Main } from "@/pages/(home)/auth/-components/Main";
+import { Main } from "@/pages/auth/-components/Main";
 
 const chunkErrorDetails = {
 	actionFn: () => window.location.reload(),
@@ -58,8 +58,8 @@ function ErrorPage() {
 						blur-3xl md:left-24"
 				/>
 
-				<div className="flex flex-col items-center gap-6">
-					<div className="flex items-center gap-3">
+				<div className="flex flex-col items-center gap-8">
+					<div className="flex items-center gap-2">
 						<Logo width={48} className="w-12 animate-pulse" />
 						<span className="text-[28px] font-extrabold tracking-tight text-black">VitaStock</span>
 					</div>
@@ -70,7 +70,7 @@ function ErrorPage() {
 					>
 						<p
 							className="absolute -z-1 translate-x-2 text-[192px] font-extrabold
-								text-[hsl(210,4%,90%,0.6)]"
+								text-[hsl(215,20%,85%,0.75)]"
 						>
 							{details.bgText}
 						</p>

@@ -9,7 +9,7 @@ import {
 	howAddStockImg,
 	howAlertsImg,
 	howTrackImg,
-	SquiggleArrowIcon,
+	SquiggleArrowImg,
 } from "@/assets/images";
 import { ForWithWrapper } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
@@ -381,8 +381,7 @@ function HomePage() {
 
 				<ForWithWrapper
 					each={howItWorksSteps}
-					className="mt-20 grid grid-cols-[1fr_auto_1fr_auto_1fr] gap-x-4
-						[--image-container-height:250px]"
+					className="grid grid-cols-[1fr_auto_1fr_auto_1fr] gap-x-4 [--image-container-height:250px]"
 					renderItem={(step, index) => (
 						<Fragment key={step.title}>
 							<li className="flex columns-[1fr] flex-col items-center gap-8 text-center">
@@ -417,7 +416,7 @@ function HomePage() {
 							</li>
 
 							{index < howItWorksSteps.length - 1 && (
-								<SquiggleArrowIcon
+								<SquiggleArrowImg
 									className="mt-[calc(var(--image-container-height)/2)]
 										text-vitastock-primary-main/70"
 								/>

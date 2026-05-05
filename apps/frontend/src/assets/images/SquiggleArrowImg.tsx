@@ -1,4 +1,4 @@
-export const SquiggleArrowIcon = (props: React.SVGProps<SVGSVGElement>) => (
+export const SquiggleArrowImg = (props: React.SVGProps<SVGSVGElement>) => (
 	<svg
 		width="128"
 		height="24"
