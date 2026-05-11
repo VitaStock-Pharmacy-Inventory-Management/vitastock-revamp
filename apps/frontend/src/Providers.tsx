@@ -1,3 +1,4 @@
+import { ProgressProvider } from "@bprogress/react";
 import { QueryClientProvider, type QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { Awaitable } from "@zayne-labs/toolkit-type-helpers";
@@ -17,7 +18,14 @@ export function Providers(props: ProvidersProps) {
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			{children}
+			<ProgressProvider
+				height="2.5px"
+				color="var(--color-vitastock-primary-darker)"
+				options={{ showSpinner: true }}
+				shallowRouting={true}
+			>
+				{children}
+			</ProgressProvider>
 
 			<ReactQueryDevtools buttonPosition="bottom-left" initialIsOpen={false} />
 		</QueryClientProvider>

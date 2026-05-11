@@ -74,11 +74,7 @@ function SettingsPage() {
 
 				<article className="flex flex-col rounded-xl bg-white ring-1 ring-shadcn-border/60">
 					<div className="flex items-center gap-2.5 border-b border-shadcn-border/50 p-5">
-						<IconBox
-							type="online"
-							icon="lucide:bell"
-							className="size-5 text-vitastock-primary-main"
-						/>
+						<IconBox icon="lucide:bell" className="size-5 text-vitastock-primary-main" />
 						<h2 className="text-[16px] font-bold text-black">Alert Settings</h2>
 					</div>
 

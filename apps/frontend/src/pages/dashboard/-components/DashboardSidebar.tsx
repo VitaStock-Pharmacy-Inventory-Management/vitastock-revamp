@@ -71,7 +71,7 @@ function DashboardSidebar() {
 						</h3>
 					</Logo>
 
-					<Sidebar.Trigger className="absolute top-8 -right-8 z-20 hover:text-vitastock-primary-dark" />
+					<Sidebar.Trigger className="absolute top-8 -right-11 z-20 hover:text-vitastock-primary-dark" />
 				</Sidebar.Header>
 
 				<Sidebar.Content className="px-3">

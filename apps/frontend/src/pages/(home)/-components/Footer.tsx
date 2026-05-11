@@ -22,7 +22,12 @@ function Footer() {
 					className="flex items-center gap-6"
 					each={["Privacy", "Terms", "Contact"]}
 					renderItem={(item) => (
-						<NavLink to="#" transitionType="regular" className="hover:text-vitastock-primary-dark">
+						<NavLink
+							key={item}
+							to="#"
+							transitionType="regular"
+							className="hover:text-vitastock-primary-dark"
+						>
 							{item}
 						</NavLink>
 					)}

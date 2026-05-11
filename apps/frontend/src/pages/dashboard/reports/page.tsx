@@ -122,8 +122,8 @@ function ReportsLog() {
 	return (
 		<section className="flex flex-col rounded-2xl bg-white shadow-sm ring-1 ring-shadcn-border/60">
 			<header
-				className="flex flex-col gap-5 border-b border-shadcn-border/50 p-6 xl:flex-row xl:items-center
-					xl:justify-between"
+				className="flex flex-col gap-5 border-b border-shadcn-border/50 p-6 lg:flex-row lg:items-center
+					lg:justify-between"
 			>
 				<div className="flex flex-col gap-1">
 					<h2 className="text-[18px] font-bold text-black">Dispensing Log</h2>
@@ -132,14 +132,14 @@ function ReportsLog() {
 					</p>
 				</div>
 
-				<div className="flex flex-wrap items-center gap-4">
+				<div className="flex items-center gap-4">
 					<Form.InputGroup
 						className="h-10 w-full max-w-[320px] gap-2 rounded-lg border-none bg-shadcn-muted/40 px-3
 							text-[14px] ring-1 ring-transparent transition-all focus-within:bg-white
 							focus-within:ring-vitastock-primary-main/50"
 					>
 						<Form.InputLeftItem>
-							<IconBox type="online" icon="lucide:search" className="size-4.5" />
+							<IconBox icon="lucide:search" className="size-4.5" />
 						</Form.InputLeftItem>
 						<Form.InputPrimitive
 							type="search"

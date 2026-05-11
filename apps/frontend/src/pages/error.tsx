@@ -11,20 +11,21 @@ const chunkErrorDetails = {
 	actionFn: () => window.location.reload(),
 	actionLabel: "Reload Now",
 	bgText: "UP",
-	icon: "lucide:refresh-cw",
+	icon: "lucide:refresh-cw" as const,
 	iconColor: tw`text-vitastock-primary-dark`,
-	message: "We've updated VitaStock with new features. Please reload the page to get the latest version.",
-	title: "App Update Available",
+	message:
+		"A new version of VitaStock is ready with the latest improvements. Please reload to stay in sync.",
+	title: "VitaStock has been updated",
 };
 
 const generalErrorDetails = (error: unknown) => ({
 	actionFn: () => window.location.reload(),
-	actionLabel: "Try Again",
+	actionLabel: "Retry",
 	bgText: "500",
-	icon: "material-symbols:error-outline-rounded",
+	icon: "material-symbols:error-outline-rounded" as const,
 	iconColor: tw`text-shadcn-destructive`,
-	message: error instanceof Error ? error.message : "Something went wrong on our end.",
-	title: "Unexpected Error",
+	message: error instanceof Error ? error.message : "An unexpected error occurred on our end.",
+	title: "Something went wrong",
 });
 
 function ErrorPage() {
@@ -74,11 +75,7 @@ function ErrorPage() {
 						>
 							{details.bgText}
 						</p>
-						<IconBox
-							type="online"
-							icon={details.icon}
-							className={cnJoin("size-10", details.iconColor)}
-						/>
+						<IconBox icon={details.icon} className={cnJoin("size-10", details.iconColor)} />
 					</span>
 				</div>
 
@@ -96,6 +93,7 @@ function ErrorPage() {
 						onClick={details.actionFn}
 					>
 						{details.actionLabel}
+						<IconBox icon="lucide:refresh-cw" />
 					</Button>
 					{!isChunkLoadError && (
 						<Button
@@ -103,7 +101,7 @@ function ErrorPage() {
 							className="px-8 py-6 text-base"
 							onClick={() => window.location.assign("/")}
 						>
-							<IconBox type="online" icon="lucide:arrow-left" className="mr-2 size-4" />
+							<IconBox icon="lucide:arrow-left" className="mr-2 size-4" />
 							Back to Home
 						</Button>
 					)}

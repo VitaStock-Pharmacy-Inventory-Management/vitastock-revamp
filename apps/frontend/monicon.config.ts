@@ -26,7 +26,10 @@ function getIconsArray() {
 		"lucide:chevron-right",
 		"lucide:chevrons-up-down",
 		"lucide:search",
+		"lucide:bell",
+		"lucide:user",
 		"lucide:plus",
+		"lucide:refresh-cw",
 		"devicon:google",
 		"mingcute:check-circle-fill",
 		"material-symbols:mail",
@@ -42,5 +45,6 @@ function getIconsArray() {
 		"material-symbols:warning-rounded",
 		"material-symbols:settings-outline-rounded",
 		"material-symbols:settings-rounded",
+		"material-symbols:error-outline-rounded",
 	];
 }
