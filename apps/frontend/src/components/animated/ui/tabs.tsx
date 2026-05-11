@@ -26,7 +26,7 @@ function TabsList(
 		>
 			<TabsPrimitive.List
 				className={cnMerge(
-					`inline-flex h-9 w-fit items-center justify-center rounded-lg bg-shadcn-muted p-[3px]
+					`inline-flex h-9 w-fit items-center justify-center rounded-lg bg-shadcn-muted p-1
 					text-shadcn-muted-foreground`,
 					className,
 					classNames?.list

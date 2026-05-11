@@ -72,8 +72,8 @@ function TableHead(props: InferProps<"th">) {
 		<th
 			data-slot="table-head"
 			className={cnMerge(
-				`h-10 px-2 text-left align-middle font-medium text-shadcn-foreground
-				[&:has([role=checkbox])]:pr-0 *:[[role=checkbox]]:translate-y-0.5`,
+				`h-10 px-2 text-left align-middle font-medium text-shadcn-foreground has-[[role=checkbox]]:pr-0
+				*:[[role=checkbox]]:translate-y-0.5`,
 				className
 			)}
 			{...restOfProps}
@@ -88,7 +88,7 @@ function TableCell(props: InferProps<"td">) {
 		<td
 			data-slot="table-cell"
 			className={cnMerge(
-				"p-2 align-middle [&:has([role=checkbox])]:pr-0 *:[[role=checkbox]]:translate-y-0.5",
+				"p-2 align-middle has-[[role=checkbox]]:pr-0 *:[[role=checkbox]]:translate-y-0.5",
 				className
 			)}
 			{...restOfProps}

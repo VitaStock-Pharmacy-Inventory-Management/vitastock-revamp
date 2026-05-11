@@ -17,6 +17,7 @@ function getIconsArray() {
 		"radix-icons:dash",
 		"radix-icons:dot-filled",
 		"radix-icons:chevron-right",
+		"lucide:panel-left",
 		"lucide:x",
 		"lucide:arrow-left",
 		"lucide:arrow-right",

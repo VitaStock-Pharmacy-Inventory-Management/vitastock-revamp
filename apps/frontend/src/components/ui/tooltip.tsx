@@ -60,5 +60,8 @@ function TooltipContent(props: InferProps<typeof TooltipPrimitive.Content>) {
 }
 
 export const Root = TooltipRoot;
+
 export const Trigger = TooltipTrigger;
 export const Content = TooltipContent;
+
+export const ContextProvider = TooltipContextProvider;

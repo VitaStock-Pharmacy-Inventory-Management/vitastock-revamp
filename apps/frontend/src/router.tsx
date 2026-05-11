@@ -9,6 +9,7 @@ import { Providers } from "./Providers";
 /* Layouts */
 const HomeLayout = lazy(() => import("./pages/(home)/layout"));
 const AuthLayout = lazy(() => import("./pages/auth/layout"));
+const DashboardLayout = lazy(() => import("./pages/dashboard/layout"));
 
 const routes = createRoutesFromElements(
 	<Route Component={RootLayout} errorElement={<ErrorPage />}>
@@ -41,13 +42,22 @@ const routes = createRoutesFromElements(
 			/>
 		</Route>
 
-		{/* <Route Component={DashboardLayout}>
+		<Route Component={DashboardLayout}>
 			<Route path="/dashboard" Component={lazy(() => import("./pages/dashboard/page"))} />
-			<Route path="/inventory" Component={lazy(() => import("./pages/dashboard/inventory/page"))} />
-			<Route path="/reports" Component={lazy(() => import("./pages/dashboard/reports/page"))} />
-			<Route path="/alerts" Component={lazy(() => import("./pages/dashboard/alerts/page"))} />
-			<Route path="/settings" Component={lazy(() => import("./pages/dashboard/settings/page"))} />
-		</Route> */}
+			<Route
+				path="/dashboard/inventory"
+				Component={lazy(() => import("./pages/dashboard/inventory/page"))}
+			/>
+			<Route
+				path="/dashboard/reports"
+				Component={lazy(() => import("./pages/dashboard/reports/page"))}
+			/>
+			<Route path="/dashboard/alerts" Component={lazy(() => import("./pages/dashboard/alerts/page"))} />
+			<Route
+				path="/dashboard/settings"
+				Component={lazy(() => import("./pages/dashboard/settings/page"))}
+			/>
+		</Route>
 
 		{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 		<Route path="*" Component={NotFoundPage} />

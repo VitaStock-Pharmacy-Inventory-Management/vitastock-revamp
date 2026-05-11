@@ -1,3 +1,4 @@
+/* eslint-disable react-you-might-not-need-an-effect/no-event-handler */
 "use client";
 
 import { createCustomContext, useCallbackRef } from "@zayne-labs/toolkit-react";

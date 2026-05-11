@@ -18,7 +18,7 @@ function Logo(
 				src={src ?? logo}
 				alt="Logo"
 				priority={true}
-				className={cnMerge(className, classNames?.image)}
+				className={cnMerge("shrink-0 object-contain", className, classNames?.image)}
 				{...restOfProps}
 			/>
 			{children}

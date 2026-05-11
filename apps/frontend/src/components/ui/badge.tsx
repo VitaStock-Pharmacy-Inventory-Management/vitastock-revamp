@@ -1,5 +1,5 @@
-import { Slot } from "radix-ui";
 import { tv, type VariantProps } from "tailwind-variants";
+import { Slot } from "@/components/common/slot";
 import { cnMerge } from "@/lib/utils/cn";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -34,6 +34,7 @@ function Badge(
 	props: React.ComponentProps<"span"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }
 ) {
 	const { asChild = false, className, variant = "default", ...restOfProps } = props;
+
 	const Component = asChild ? Slot.Root : "span";
 
 	return (

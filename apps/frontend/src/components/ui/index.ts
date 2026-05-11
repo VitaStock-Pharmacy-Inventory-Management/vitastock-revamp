@@ -17,3 +17,4 @@ export { Skeleton } from "./skeleton";
 export * as Table from "./table";
 export * as Tabs from "./tabs";
 export * as Combobox from "./combobox";
+export * as Sidebar from "./sidebar";

@@ -1,3 +1,4 @@
+/* eslint-disable react-you-might-not-need-an-effect/no-event-handler */
 /* eslint-disable react/set-state-in-effect */
 /* eslint-disable react-you-might-not-need-an-effect/no-derived-state */
 /* eslint-disable react-you-might-not-need-an-effect/no-chain-state-updates */
@@ -17,7 +18,7 @@ import {
 	useRef,
 	useState,
 } from "react";
-import * as MotionHighlightPrimitive from "./motion-highlight";
+import * as HighlightPrimitive from "./effects/highlight";
 import { Slot, type WithAsChild } from "./slot";
 
 type TabsContextType = {
@@ -59,7 +60,6 @@ function TabsRoot(props: TabsProps) {
 
 	useEffect(() => {
 		if (
-			// eslint-disable-next-line react-you-might-not-need-an-effect/no-event-handler
 			!isControlled
 			&& activeValue === undefined
 			&& triggersRef.current.size > 0
@@ -112,7 +112,7 @@ function TabsRoot(props: TabsProps) {
 }
 
 type TabsHighlightProps = Omit<
-	React.ComponentProps<typeof MotionHighlightPrimitive.Root>,
+	React.ComponentProps<typeof HighlightPrimitive.Root>,
 	"controlledItems" | "value"
 >;
 
@@ -121,7 +121,7 @@ function TabsHighlight(props: TabsHighlightProps) {
 	const { activeValue } = useTabsContext();
 
 	return (
-		<MotionHighlightPrimitive.Root
+		<HighlightPrimitive.Root
 			data-slot="tabs-highlight-root"
 			controlledItems={true}
 			value={activeValue}
@@ -139,12 +139,12 @@ function TabsList(props: TabsListProps) {
 	return <div role="tablist" data-slot="tabs-list" {...props} />;
 }
 
-type TabsHighlightItemProps = React.ComponentProps<typeof MotionHighlightPrimitive.Item> & {
+type TabsHighlightItemProps = React.ComponentProps<typeof HighlightPrimitive.Item> & {
 	value: string;
 };
 
 function TabsHighlightItem(props: TabsHighlightItemProps) {
-	return <MotionHighlightPrimitive.Item data-slot="tabs-highlight-item" {...props} />;
+	return <HighlightPrimitive.Item data-slot="tabs-highlight-item" {...props} />;
 }
 
 type TabsTriggerProps = WithAsChild<
