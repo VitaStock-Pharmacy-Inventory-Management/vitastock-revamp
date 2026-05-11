@@ -32,5 +32,15 @@ function getIconsArray() {
 		"material-symbols:mail",
 		"material-symbols:troubleshoot",
 		"streamline:padlock-square-1-solid",
+		"material-symbols:dashboard-outline-rounded",
+		"material-symbols:dashboard-rounded",
+		"material-symbols:inventory-2-outline-rounded",
+		"material-symbols:inventory-2-rounded",
+		"mdi:chart-box-outline",
+		"mdi:chart-box",
+		"material-symbols:warning-outline",
+		"material-symbols:warning-rounded",
+		"material-symbols:settings-outline-rounded",
+		"material-symbols:settings-rounded",
 	];
 }

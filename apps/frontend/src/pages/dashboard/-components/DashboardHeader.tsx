@@ -23,10 +23,7 @@ function DashboardHeader() {
 			</Form.InputGroup>
 
 			<div className="flex items-center gap-6">
-				<Button
-					unstyled={true}
-					className="relative text-vitastock-body-color hover:text-vitastock-primary-main"
-				>
+				<Button unstyled={true} className="relative hover:text-vitastock-primary-main">
 					<IconBox type="online" icon="lucide:bell" className="size-5" />
 					<span className="absolute -top-0.5 -right-0.5 size-2 rounded-full bg-shadcn-destructive" />
 				</Button>

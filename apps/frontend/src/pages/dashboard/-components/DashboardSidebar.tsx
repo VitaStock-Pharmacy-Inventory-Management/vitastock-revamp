@@ -7,12 +7,37 @@ import { Sidebar } from "@/components/ui";
 import { Logo } from "@/pages/-components/Logo";
 
 const navItems = [
-	{ href: "/dashboard", icon: "lucide:layout-dashboard", isActive: true, title: "Dashboard" },
-	{ href: "/dashboard/inventory", icon: "lucide:archive", isActive: false, title: "Inventory" },
-	{ href: "/dashboard/reports", icon: "lucide:bar-chart-3", isActive: false, title: "Reports" },
-	{ href: "/dashboard/alerts", icon: "lucide:triangle-alert", isActive: false, title: "Alerts" },
-	{ href: "/dashboard/settings", icon: "lucide:settings", isActive: false, title: "Settings" },
-];
+	{
+		href: "/dashboard",
+		icon: "material-symbols:dashboard-outline-rounded",
+		iconActive: "material-symbols:dashboard-rounded",
+		title: "Dashboard",
+	},
+	{
+		href: "/dashboard/inventory",
+		icon: "material-symbols:inventory-2-outline-rounded",
+		iconActive: "material-symbols:inventory-2-rounded",
+		title: "Inventory",
+	},
+	{
+		href: "/dashboard/reports",
+		icon: "mdi:chart-box-outline",
+		iconActive: "mdi:chart-box",
+		title: "Reports",
+	},
+	{
+		href: "/dashboard/alerts",
+		icon: "material-symbols:warning-outline",
+		iconActive: "material-symbols:warning-rounded",
+		title: "Alerts",
+	},
+	{
+		href: "/dashboard/settings",
+		icon: "material-symbols:settings-outline-rounded",
+		iconActive: "material-symbols:settings-rounded",
+		title: "Settings",
+	},
+] as const;
 
 function DashboardSidebar() {
 	return (
@@ -46,10 +71,7 @@ function DashboardSidebar() {
 						</h3>
 					</Logo>
 
-					<Sidebar.Trigger
-						className="absolute top-8 -right-8 z-20 text-vitastock-body-color
-							hover:text-vitastock-primary-dark"
-					/>
+					<Sidebar.Trigger className="absolute top-8 -right-8 z-20 hover:text-vitastock-primary-dark" />
 				</Sidebar.Header>
 
 				<Sidebar.Content className="px-3">
@@ -59,31 +81,25 @@ function DashboardSidebar() {
 								each={navItems}
 								renderItem={(item) => (
 									<Sidebar.MenuItem key={item.title}>
-										<Sidebar.MenuButton
-											isActive={item.isActive}
-											tooltip={item.title}
-											className={`h-11 gap-3.5 rounded-lg px-3.5 text-[0.95rem] font-medium
-											transition-colors ${
-												item.isActive ?
-													`bg-vitastock-226-100-84/60 text-vitastock-primary-dark
-														hover:bg-vitastock-226-100-84/80
-														hover:text-vitastock-primary-dark`
-												:	`text-vitastock-body-color hover:bg-black/5
-													hover:text-vitastock-primary-dark`
-											}`}
-											asChild={true}
-										>
-											<NavLink to={item.href}>
-												<IconBox
-													icon={item.icon}
-													type="online"
-													className={`size-[1.15rem] shrink-0 ${
-														item.isActive ?
-															"text-vitastock-primary-dark"
-														:	"text-vitastock-body-color"
-													}`}
-												/>
-												<span>{item.title}</span>
+										<Sidebar.MenuButton tooltip={item.title} asChild={true}>
+											<NavLink
+												to={item.href}
+												className="h-11 gap-3 px-3.5 text-[14px] font-medium transition-colors
+													hover:bg-black/5 hover:text-vitastock-primary-dark
+													data-[active=true]:bg-vitastock-226-100-84/70
+													data-[active=true]:text-vitastock-primary-dark
+													data-[active=true]:hover:bg-vitastock-226-100-84/90
+													data-[active=true]:hover:text-vitastock-primary-dark"
+											>
+												{(ctx) => (
+													<>
+														<IconBox
+															icon={ctx.isActive ? item.iconActive : item.icon}
+															className="size-4.5"
+														/>
+														<span>{item.title}</span>
+													</>
+												)}
 											</NavLink>
 										</Sidebar.MenuButton>
 									</Sidebar.MenuItem>

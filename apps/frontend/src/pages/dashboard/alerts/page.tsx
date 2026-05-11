@@ -80,8 +80,7 @@ function AlertsPage() {
 								"h-9.5 rounded-[10px] px-4 text-[14px] font-medium transition-colors",
 								filter === "All Alerts" ?
 									"bg-vitastock-primary-main text-white"
-								:	`border border-shadcn-border/60 bg-white text-vitastock-body-color
-									hover:bg-shadcn-muted`
+								:	"border border-shadcn-border/60 bg-white hover:bg-shadcn-muted"
 							)}
 						>
 							{filter}

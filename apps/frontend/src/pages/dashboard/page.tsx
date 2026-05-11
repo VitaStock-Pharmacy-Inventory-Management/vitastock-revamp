@@ -1,4 +1,4 @@
-import { For, ForWithWrapper } from "@/components/common/for";
+import { For } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
 import { Badge, Table } from "@/components/ui";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Main } from "./-components/Main";
 function DashboardPage() {
 	return (
 		<Main className="gap-10 px-12 pt-12">
+			<DashboardHeader />
 			<DashboardStats />
 			<DashboardQuickActions />
 			<DashboardActivity />
@@ -16,6 +17,15 @@ function DashboardPage() {
 }
 
 export default DashboardPage;
+
+function DashboardHeader() {
+	return (
+		<header className="flex flex-col gap-1.5">
+			<h1 className="text-[30px] font-extrabold tracking-tight text-black">Hello, Spring Care</h1>
+			<p className="text-[15px] font-medium text-vitastock-body-color/80">Welcome back!</p>
+		</header>
+	);
+}
 
 const stats = [
 	{
@@ -50,12 +60,9 @@ const stats = [
 
 function DashboardStats() {
 	return (
-		<section className="flex flex-col gap-6">
-			<h1 className="text-[30px] font-extrabold tracking-tight text-black">Dashboard</h1>
-
-			<ForWithWrapper
+		<section className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+			<For
 				each={stats}
-				className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
 				renderItem={(stat) => (
 					<li
 						key={stat.title}
@@ -63,7 +70,7 @@ function DashboardStats() {
 							ring-shadcn-border/40"
 					>
 						<div className="flex items-center justify-between">
-							<h3 className="text-[14px] font-medium text-vitastock-body-color">{stat.title}</h3>
+							<h3 className="text-[14px] font-medium">{stat.title}</h3>
 							<IconBox type="online" icon={stat.icon} className={cnJoin("size-5", stat.color)} />
 						</div>
 						<div>
@@ -177,9 +184,7 @@ function DashboardActivity() {
 								</Badge>
 							</Table.Cell>
 							<Table.Cell className="py-4 text-[14px] text-black">{activity.quantity}</Table.Cell>
-							<Table.Cell className="py-4 text-[14px] text-vitastock-body-color">
-								{activity.person}
-							</Table.Cell>
+							<Table.Cell className="py-4 text-[14px]">{activity.person}</Table.Cell>
 							<Table.Cell className="py-4 text-right text-[14px] text-vitastock-body-color/70">
 								{activity.time}
 							</Table.Cell>

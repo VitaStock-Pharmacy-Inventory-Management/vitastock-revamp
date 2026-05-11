@@ -625,7 +625,7 @@ function SidebarMenuButton(
 	let {
 		asChild = false,
 		className,
-		isActive = false,
+		isActive,
 		size = "default",
 		tooltip,
 		variant = "default",
@@ -641,7 +641,7 @@ function SidebarMenuButton(
 			data-slot="sidebar-menu-button"
 			data-sidebar="menu-button"
 			data-size={size}
-			data-active={isActive}
+			{...(isActive != null && { "data-active": isActive })}
 			className={cnMerge(sidebarMenuButtonVariants({ size, variant }), className)}
 			{...restOfProps}
 		/>

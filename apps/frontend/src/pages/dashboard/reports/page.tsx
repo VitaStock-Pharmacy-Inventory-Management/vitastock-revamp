@@ -20,6 +20,9 @@ function ReportsHeader() {
 	return (
 		<header className="flex flex-col gap-1.5">
 			<h1 className="text-[30px] font-extrabold tracking-tight text-black">Reports</h1>
+			<p className="text-[15px] font-medium text-vitastock-body-color/80">
+				Manage usage reports and stock activity.
+			</p>
 		</header>
 	);
 }
