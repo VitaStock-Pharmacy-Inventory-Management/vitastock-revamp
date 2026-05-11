@@ -7,11 +7,11 @@ import { Sidebar } from "@/components/ui";
 import { Logo } from "@/pages/-components/Logo";
 
 const navItems = [
-	{ icon: "lucide:layout-dashboard", isActive: true, title: "Dashboard", href: "/dashboard" },
-	{ icon: "lucide:archive", isActive: false, title: "Inventory", href: "/dashboard/inventory" },
-	{ icon: "lucide:bar-chart-3", isActive: false, title: "Reports", href: "/dashboard/reports" },
-	{ icon: "lucide:triangle-alert", isActive: false, title: "Alerts", href: "/dashboard/alerts" },
-	{ icon: "lucide:settings", isActive: false, title: "Settings", href: "/dashboard/settings" },
+	{ href: "/dashboard", icon: "lucide:layout-dashboard", isActive: true, title: "Dashboard" },
+	{ href: "/dashboard/inventory", icon: "lucide:archive", isActive: false, title: "Inventory" },
+	{ href: "/dashboard/reports", icon: "lucide:bar-chart-3", isActive: false, title: "Reports" },
+	{ href: "/dashboard/alerts", icon: "lucide:triangle-alert", isActive: false, title: "Alerts" },
+	{ href: "/dashboard/settings", icon: "lucide:settings", isActive: false, title: "Settings" },
 ];
 
 function DashboardSidebar() {
