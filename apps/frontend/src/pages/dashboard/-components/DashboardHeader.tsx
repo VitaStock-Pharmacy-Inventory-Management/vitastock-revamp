@@ -1,6 +1,7 @@
 import { useLocation } from "react-router";
 import { IconBox } from "@/components/common/IconBox";
-import { Button, Form } from "@/components/ui";
+import { Button } from "@/components/ui";
+import { Form } from "@/components/ui/form";
 
 function DashboardHeader() {
 	const pathname = useLocation().pathname;

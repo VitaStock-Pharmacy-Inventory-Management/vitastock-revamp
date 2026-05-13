@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { IconBox } from "@/components/common/IconBox";
-import { Button, Form } from "@/components/ui";
+import { Button } from "@/components/ui";
+import { Form } from "@/components/ui/form";
 import { Switch } from "@/components/ui/switch";
 import { Main } from "../-components/Main";
 

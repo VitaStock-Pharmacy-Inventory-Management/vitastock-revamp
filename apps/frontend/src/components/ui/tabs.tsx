@@ -1,8 +1,7 @@
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { Tabs as TabsPrimitive } from "radix-ui";
 import { cnMerge } from "@/lib/utils/cn";
 
-function TabsRoot(props: InferProps<typeof TabsPrimitive.Root>) {
+function TabsRoot(props: React.ComponentProps<typeof TabsPrimitive.Root>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -14,7 +13,7 @@ function TabsRoot(props: InferProps<typeof TabsPrimitive.Root>) {
 	);
 }
 
-function TabList(props: InferProps<typeof TabsPrimitive.List>) {
+function TabList(props: React.ComponentProps<typeof TabsPrimitive.List>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -30,7 +29,7 @@ function TabList(props: InferProps<typeof TabsPrimitive.List>) {
 	);
 }
 
-function TabsTrigger(props: InferProps<typeof TabsPrimitive.Trigger>) {
+function TabsTrigger(props: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -53,7 +52,7 @@ function TabsTrigger(props: InferProps<typeof TabsPrimitive.Trigger>) {
 	);
 }
 
-function TabsContent(props: InferProps<typeof TabsPrimitive.Content>) {
+function TabsContent(props: React.ComponentProps<typeof TabsPrimitive.Content>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -65,10 +64,4 @@ function TabsContent(props: InferProps<typeof TabsPrimitive.Content>) {
 	);
 }
 
-export const Root = TabsRoot;
-
-export const List = TabList;
-
-export const Trigger = TabsTrigger;
-
-export const Content = TabsContent;
+export { TabsRoot as Root, TabList as List, TabsTrigger as Trigger, TabsContent as Content };

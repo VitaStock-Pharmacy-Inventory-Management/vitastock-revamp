@@ -1,10 +1,9 @@
 "use client";
 
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { Tooltip as TooltipPrimitive } from "radix-ui";
 import { cnMerge } from "@/lib/utils/cn";
 
-export function TooltipContextProvider(props: InferProps<typeof TooltipPrimitive.Provider>) {
+export function TooltipContextProvider(props: React.ComponentProps<typeof TooltipPrimitive.Provider>) {
 	const { delayDuration = 0, ...restOfProps } = props;
 
 	const TooltipPrimitiveContextProvider = TooltipPrimitive.Provider;
@@ -18,7 +17,7 @@ export function TooltipContextProvider(props: InferProps<typeof TooltipPrimitive
 	);
 }
 
-function TooltipRoot(props: InferProps<typeof TooltipPrimitive.Root>) {
+function TooltipRoot(props: React.ComponentProps<typeof TooltipPrimitive.Root>) {
 	return (
 		<TooltipContextProvider>
 			<TooltipPrimitive.Root data-slot="tooltip" {...props} />
@@ -26,11 +25,11 @@ function TooltipRoot(props: InferProps<typeof TooltipPrimitive.Root>) {
 	);
 }
 
-function TooltipTrigger(props: InferProps<typeof TooltipPrimitive.Trigger>) {
+function TooltipTrigger(props: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
 	return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />;
 }
 
-function TooltipContent(props: InferProps<typeof TooltipPrimitive.Content>) {
+function TooltipContent(props: React.ComponentProps<typeof TooltipPrimitive.Content>) {
 	const { children, className, sideOffset = 0, ...restOfProps } = props;
 
 	return (
@@ -59,9 +58,9 @@ function TooltipContent(props: InferProps<typeof TooltipPrimitive.Content>) {
 	);
 }
 
-export const Root = TooltipRoot;
-
-export const Trigger = TooltipTrigger;
-export const Content = TooltipContent;
-
-export const ContextProvider = TooltipContextProvider;
+export {
+	TooltipRoot as Root,
+	TooltipTrigger as Trigger,
+	TooltipContent as Content,
+	TooltipContextProvider as ContextProvider,
+};

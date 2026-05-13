@@ -543,11 +543,14 @@ function TooltipTrigger(props: TooltipTriggerProps) {
 	);
 }
 
-export const Provider = TooltipProvider;
-export const Root = TooltipRoot;
-export const Content = TooltipContent;
-export const Trigger = TooltipTrigger;
-export const Arrow = TooltipArrow;
-
-// eslint-disable-next-line react-refresh/only-export-components
-export { useGlobalTooltipContext, useTooltipContext };
+export {
+	TooltipProvider as Provider,
+	TooltipRoot as Root,
+	TooltipContent as Content,
+	TooltipTrigger as Trigger,
+	TooltipArrow as Arrow,
+	// eslint-disable-next-line react-refresh/only-export-components
+	useGlobalTooltipContext,
+	// eslint-disable-next-line react-refresh/only-export-components
+	useTooltipContext,
+};

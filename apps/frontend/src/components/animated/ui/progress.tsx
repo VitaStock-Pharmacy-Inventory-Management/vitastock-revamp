@@ -1,0 +1,30 @@
+import { cnMerge } from "@/lib/utils/cn";
+import * as ProgressPrimitive from "../primitives/progress-radix";
+
+function ProgressRoot(
+	props: React.ComponentProps<typeof ProgressPrimitive.Root> & {
+		classNames?: {
+			base?: string;
+			indicator?: string;
+		};
+	}
+) {
+	const { className, classNames, ...restOfProps } = props;
+
+	return (
+		<ProgressPrimitive.Root
+			className={cnMerge(
+				"relative h-2 w-full overflow-hidden rounded-full bg-neutral-900/20",
+				className,
+				classNames?.base
+			)}
+			{...restOfProps}
+		>
+			<ProgressPrimitive.Indicator
+				className={cnMerge("size-full flex-1 rounded-full bg-neutral-900", classNames?.indicator)}
+			/>
+		</ProgressPrimitive.Root>
+	);
+}
+
+export { ProgressRoot as Root };

@@ -1,22 +1,21 @@
 "use client";
 
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
-import { Accordion as AccordionPrimitive } from "radix-ui";
 import { cnMerge } from "@/lib/utils/cn";
+import { Accordion as AccordionPrimitive } from "radix-ui";
 import { IconBox } from "../common/IconBox";
 
-function AccordionRoot(props: InferProps<typeof AccordionPrimitive.Root>) {
+function AccordionRoot(props: React.ComponentProps<typeof AccordionPrimitive.Root>) {
 	return <AccordionPrimitive.Root data-slot="accordion-root" {...props} />;
 }
 
-function AccordionItem(props: InferProps<typeof AccordionPrimitive.Item>) {
+function AccordionItem(props: React.ComponentProps<typeof AccordionPrimitive.Item>) {
 	const { className, ...restOfProps } = props;
 
 	return <AccordionPrimitive.Item data-slot="accordion-item" className={className} {...restOfProps} />;
 }
 
 function AccordionTrigger(
-	props: InferProps<typeof AccordionPrimitive.Trigger> & {
+	props: React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
 		classNames?: { base?: string; header?: string; icon?: string };
 		withIcon?: boolean;
 	}
@@ -54,7 +53,7 @@ function AccordionTrigger(
 	);
 }
 
-function AccordionContent(props: InferProps<typeof AccordionPrimitive.Content>) {
+function AccordionContent(props: React.ComponentProps<typeof AccordionPrimitive.Content>) {
 	const { children, className, ...restOfProps } = props;
 
 	return (
@@ -69,10 +68,10 @@ function AccordionContent(props: InferProps<typeof AccordionPrimitive.Content>) 
 	);
 }
 
-export const Root = AccordionRoot;
+export {
+	AccordionContent as Content,
+	AccordionItem as Item,
+	AccordionRoot as Root,
+	AccordionTrigger as Trigger
+};
 
-export const Item = AccordionItem;
-
-export const Trigger = AccordionTrigger;
-
-export const Content = AccordionContent;

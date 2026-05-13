@@ -1,7 +1,8 @@
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { cnMerge } from "@/lib/utils/cn";
 
-function TableRoot(props: InferProps<"table"> & { classNames?: { container?: string; table?: string } }) {
+function TableRoot(
+	props: React.ComponentProps<"table"> & { classNames?: { container?: string; table?: string } }
+) {
 	const { className, classNames, ...restOfProps } = props;
 
 	return (
@@ -18,7 +19,7 @@ function TableRoot(props: InferProps<"table"> & { classNames?: { container?: str
 	);
 }
 
-function TableHeader(props: InferProps<"thead">) {
+function TableHeader(props: React.ComponentProps<"thead">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -26,7 +27,7 @@ function TableHeader(props: InferProps<"thead">) {
 	);
 }
 
-function TableBody(props: InferProps<"tbody">) {
+function TableBody(props: React.ComponentProps<"tbody">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -38,7 +39,7 @@ function TableBody(props: InferProps<"tbody">) {
 	);
 }
 
-function TableFooter(props: InferProps<"tfoot">) {
+function TableFooter(props: React.ComponentProps<"tfoot">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -50,7 +51,7 @@ function TableFooter(props: InferProps<"tfoot">) {
 	);
 }
 
-function TableRow(props: InferProps<"tr">) {
+function TableRow(props: React.ComponentProps<"tr">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -65,7 +66,7 @@ function TableRow(props: InferProps<"tr">) {
 	);
 }
 
-function TableHead(props: InferProps<"th">) {
+function TableHead(props: React.ComponentProps<"th">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -81,7 +82,7 @@ function TableHead(props: InferProps<"th">) {
 	);
 }
 
-function TableCell(props: InferProps<"td">) {
+function TableCell(props: React.ComponentProps<"td">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -96,7 +97,7 @@ function TableCell(props: InferProps<"td">) {
 	);
 }
 
-function TableCaption(props: InferProps<"caption">) {
+function TableCaption(props: React.ComponentProps<"caption">) {
 	const { className, ...restOfProps } = props;
 
 	return (

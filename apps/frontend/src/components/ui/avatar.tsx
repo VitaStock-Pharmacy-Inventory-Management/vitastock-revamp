@@ -39,6 +39,4 @@ function AvatarFallback(props: React.ComponentProps<typeof AvatarPrimitive.Fallb
 	);
 }
 
-export const Root = AvatarRoot;
-export const Image = AvatarImage;
-export const Fallback = AvatarFallback;
+export { AvatarRoot as Root, AvatarImage as Image, AvatarFallback as Fallback };

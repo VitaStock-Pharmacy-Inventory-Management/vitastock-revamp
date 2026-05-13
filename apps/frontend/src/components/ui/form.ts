@@ -1,3 +1,3 @@
 "use client";
 
-export * from "@zayne-labs/ui-react/ui/form";
+export { Form, FormInput } from "@zayne-labs/ui-react/ui/form";

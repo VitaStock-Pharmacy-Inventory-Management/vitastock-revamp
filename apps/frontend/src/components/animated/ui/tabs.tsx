@@ -74,12 +74,16 @@ function TabsContentList(props: React.ComponentProps<typeof TabsPrimitive.Conten
 	return <TabsPrimitive.ContentList {...props} />;
 }
 
-function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {
-	return <TabsPrimitive.Content className={cnMerge("outline-none", className)} {...props} />;
+function TabsContent(props: React.ComponentProps<typeof TabsPrimitive.Content>) {
+	const { className, ...restOfProps } = props;
+
+	return <TabsPrimitive.Content className={cnMerge("outline-none", className)} {...restOfProps} />;
 }
 
-export const Root = TabsRoot;
-export const List = TabsList;
-export const Trigger = TabsTrigger;
-export const ContentList = TabsContentList;
-export const Content = TabsContent;
+export {
+	TabsRoot as Root,
+	TabsList as List,
+	TabsTrigger as Trigger,
+	TabsContentList as ContentList,
+	TabsContent as Content,
+};

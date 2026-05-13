@@ -1,1 +1,1 @@
-export * from "@zayne-labs/ui-react/ui/card";
+export { Card } from "@zayne-labs/ui-react/ui/card";

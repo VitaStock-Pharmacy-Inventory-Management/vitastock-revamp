@@ -320,13 +320,14 @@ function TabsContent({ asChild = false, style, value, ...props }: TabsContentPro
 	);
 }
 
-export const Root = TabsRoot;
-export const Highlight = TabsHighlight;
-export const HighlightItem = TabsHighlightItem;
-export const Trigger = TabsTrigger;
-export const List = TabsList;
-export const ContentList = TabsContentList;
-export const Content = TabsContent;
-
-// eslint-disable-next-line react-refresh/only-export-components
-export { useTabsContext };
+export {
+	TabsRoot as Root,
+	TabsHighlight as Highlight,
+	TabsHighlightItem as HighlightItem,
+	TabsTrigger as Trigger,
+	TabsList as List,
+	TabsContentList as ContentList,
+	TabsContent as Content,
+	// eslint-disable-next-line react-refresh/only-export-components
+	useTabsContext,
+};

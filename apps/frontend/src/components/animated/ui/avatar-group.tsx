@@ -57,6 +57,4 @@ function AvatarGroupTooltip(props: AvatarGroupTooltipProps) {
 	);
 }
 
-export const Root = AvatarGroupRoot;
-
-export const Tooltip = AvatarGroupTooltip;
+export { AvatarGroupRoot as Root, AvatarGroupTooltip as Tooltip };

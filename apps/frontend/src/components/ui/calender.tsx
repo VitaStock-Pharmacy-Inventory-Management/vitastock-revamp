@@ -1,7 +1,6 @@
 /* eslint-disable react/no-nested-component-definitions */
 
 import { DayButton, DayPicker, getDefaultClassNames } from "@daypicker/react";
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import type { ExtractUnion } from "@zayne-labs/toolkit-type-helpers";
 import { useEffect, useRef } from "react";
 import { cnMerge } from "@/lib/utils/cn";
@@ -9,9 +8,9 @@ import { IconBox } from "../common/IconBox";
 import { shadcnButtonVariants, type ShadcnButtonProps } from "./constants";
 
 export function Calendar(
-	props: InferProps<typeof DayPicker> & {
+	props: React.ComponentProps<typeof DayPicker> & {
 		buttonVariant?: ExtractUnion<(typeof shadcnButtonVariants)["variants"]["variant"]>;
-		classNames?: InferProps<typeof DayPicker>["classNames"] & { base?: string };
+		classNames?: React.ComponentProps<typeof DayPicker>["classNames"] & { base?: string };
 	}
 ) {
 	const {
@@ -222,7 +221,7 @@ export function Calendar(
 	);
 }
 
-export function CalendarDayButton(props: InferProps<typeof DayButton> & ShadcnButtonProps) {
+export function CalendarDayButton(props: React.ComponentProps<typeof DayButton> & ShadcnButtonProps) {
 	// eslint-disable-next-line react-you-might-not-need-an-effect/no-event-handler
 	const { className, day, modifiers, size = "icon", variant = "ghost", ...restOfProps } = props;
 

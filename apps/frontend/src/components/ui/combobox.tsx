@@ -282,13 +282,15 @@ function ComboboxCreateNew(props: ComboboxCreateNewProps) {
 	);
 }
 
-export const Root = ComboboxRoot;
-export const Trigger = ComboboxTrigger;
-export const Content = ComboboxContent;
-export const Input = ComboboxInput;
-export const List = ComboboxList;
-export const Empty = ComboboxEmpty;
-export const Group = ComboboxGroup;
-export const Item = ComboboxItem;
-export const Separator = ComboboxSeparator;
-export const CreateNew = ComboboxCreateNew;
+export {
+	ComboboxRoot as Root,
+	ComboboxTrigger as Trigger,
+	ComboboxContent as Content,
+	ComboboxInput as Input,
+	ComboboxList as List,
+	ComboboxEmpty as Empty,
+	ComboboxGroup as Group,
+	ComboboxItem as Item,
+	ComboboxSeparator as Separator,
+	ComboboxCreateNew as CreateNew,
+};

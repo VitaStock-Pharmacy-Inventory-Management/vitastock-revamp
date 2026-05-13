@@ -29,6 +29,7 @@ function getIconsArray() {
 		"lucide:bell",
 		"lucide:user",
 		"lucide:plus",
+		"lucide:circle",
 		"lucide:refresh-cw",
 		"devicon:google",
 		"mingcute:check-circle-fill",

@@ -1,6 +1,7 @@
 import { For } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
-import { Badge, Button, Form, Table } from "@/components/ui";
+import { Badge, Button, Table } from "@/components/ui";
+import { Form } from "@/components/ui/form";
 import { cnJoin } from "@/lib/utils/cn";
 import { Main } from "../-components/Main";
 

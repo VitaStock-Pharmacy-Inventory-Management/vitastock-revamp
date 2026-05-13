@@ -22,9 +22,9 @@ function Switch(
 				aria-invalid:border-shadcn-destructive aria-invalid:ring-3
 				aria-invalid:ring-shadcn-destructive/20 data-checked:bg-shadcn-primary
 				data-disabled:cursor-not-allowed data-disabled:opacity-50 data-unchecked:bg-shadcn-input
-				data-[size=default]:h-[18.4px] data-[size=default]:w-[32px] data-[size=sm]:h-[14px]
-				data-[size=sm]:w-[24px] dark:aria-invalid:border-shadcn-destructive/50
-				dark:aria-invalid:ring-shadcn-destructive/40 dark:data-unchecked:bg-shadcn-input/80`,
+				data-[size=default]:h-[18.4px] data-[size=default]:w-8 data-[size=sm]:h-3.5 data-[size=sm]:w-6
+				dark:aria-invalid:border-shadcn-destructive/50 dark:aria-invalid:ring-shadcn-destructive/40
+				dark:data-unchecked:bg-shadcn-input/80`,
 				className,
 				classNames?.base
 			)}

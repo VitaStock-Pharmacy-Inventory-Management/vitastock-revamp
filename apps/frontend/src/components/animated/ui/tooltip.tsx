@@ -26,16 +26,16 @@ function TooltipTrigger(props: React.ComponentProps<typeof TooltipPrimitive.Trig
 	return <TooltipPrimitive.Trigger {...props} />;
 }
 
-type TooltipContentProps = Omit<React.ComponentProps<typeof TooltipPrimitive.Content>, "asChild"> & {
-	children: React.ReactNode;
-	classNames?: {
-		arrow?: string;
-		base?: string;
-	};
-	layout?: "position" | "preserve-aspect" | "size" | boolean;
-};
-
-function TooltipContent(props: TooltipContentProps) {
+function TooltipContent(
+	props: Omit<React.ComponentProps<typeof TooltipPrimitive.Content>, "asChild"> & {
+		children: React.ReactNode;
+		classNames?: {
+			arrow?: string;
+			base?: string;
+		};
+		layout?: "position" | "preserve-aspect" | "size" | boolean;
+	}
+) {
 	const { children, className, classNames, layout = "preserve-aspect", ...restOfProps } = props;
 
 	return (
@@ -64,8 +64,9 @@ function TooltipContent(props: TooltipContentProps) {
 	);
 }
 
-export const Provider = TooltipProvider;
-
-export const Root = TooltipRoot;
-export const Trigger = TooltipTrigger;
-export const Content = TooltipContent;
+export {
+	TooltipProvider as Provider,
+	TooltipRoot as Root,
+	TooltipTrigger as Trigger,
+	TooltipContent as Content,
+};

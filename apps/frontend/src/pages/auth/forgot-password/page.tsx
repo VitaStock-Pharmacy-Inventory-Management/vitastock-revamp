@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { IconBox } from "@/components/common/IconBox";
 import { NavLink } from "@/components/common/NavLink";
-import { Button, Form } from "@/components/ui";
+import { Button } from "@/components/ui";
+import { Form } from "@/components/ui/form";
 import { Main } from "../-components/Main";
 
 function ForgotPasswordPage() {

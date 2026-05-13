@@ -1,10 +1,9 @@
 "use client";
 
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { ScrollArea as ScrollAreaPrimitive } from "radix-ui";
 import { cnMerge } from "@/lib/utils/cn";
 
-function ScrollAreaRoot(props: InferProps<typeof ScrollAreaPrimitive.Root>) {
+function ScrollAreaRoot(props: React.ComponentProps<typeof ScrollAreaPrimitive.Root>) {
 	const { children, className, ...restProps } = props;
 
 	return (
@@ -29,7 +28,7 @@ function ScrollAreaRoot(props: InferProps<typeof ScrollAreaPrimitive.Root>) {
 }
 
 function ScrollAreaScrollBar(
-	props: InferProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar> & {
+	props: React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar> & {
 		classNames?: {
 			base?: string;
 			thumb?: string;
@@ -59,6 +58,4 @@ function ScrollAreaScrollBar(
 	);
 }
 
-export const Root = ScrollAreaRoot;
-
-export const ScrollBar = ScrollAreaScrollBar;
+export { ScrollAreaRoot as Root, ScrollAreaScrollBar as ScrollBar };

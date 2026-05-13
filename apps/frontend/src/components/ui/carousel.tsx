@@ -2,7 +2,7 @@
 "use client";
 
 import { createCustomContext, useCallbackRef } from "@zayne-labs/toolkit-react";
-import type { DiscriminatedRenderProps, InferProps } from "@zayne-labs/toolkit-react/utils";
+import type { DiscriminatedRenderProps } from "@zayne-labs/toolkit-react/utils";
 import type { AnyFunction } from "@zayne-labs/toolkit-type-helpers";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 import { useEffect, useMemo, useState } from "react";
@@ -40,7 +40,7 @@ const [CarouselContextProvider, useCarouselContext] = createCustomContext<Carous
 	providerName: "CarouselRoot",
 });
 
-function CarouselRoot(props: CarouselProps & InferProps<"div">) {
+function CarouselRoot(props: CarouselProps & React.ComponentProps<"div">) {
 	const {
 		children,
 		className,
@@ -156,7 +156,7 @@ function CarouselRoot(props: CarouselProps & InferProps<"div">) {
 	);
 }
 
-function CarouselContent(props: InferProps<"div">) {
+function CarouselContent(props: React.ComponentProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	const { carouselRef, orientation } = useCarouselContext();
@@ -178,7 +178,7 @@ function CarouselContent(props: InferProps<"div">) {
 	);
 }
 
-function CarouselItem(props: InferProps<"div">) {
+function CarouselItem(props: React.ComponentProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	// const { orientation } = useCarouselContext();
@@ -252,7 +252,7 @@ function CarouselNext(props: ShadcnButtonProps) {
 	);
 }
 
-function CarouselIndicator(props: InferProps<"button"> & { currentIndex: number }) {
+function CarouselIndicator(props: React.ComponentProps<"button"> & { currentIndex: number }) {
 	const { className, currentIndex, ...restOfProps } = props;
 	const { scrollTo, selectedIndex } = useCarouselContext();
 
@@ -281,7 +281,7 @@ type RenderPropFn = (context: {
 }) => React.ReactNode;
 
 function CarouselIndicatorList(
-	props: Omit<InferProps<"ul">, "children"> & {
+	props: Omit<React.ComponentProps<"ul">, "children"> & {
 		children?: RenderPropFn;
 		classNames?: { indicator?: string; indicatorGroup?: string };
 	}
@@ -327,13 +327,14 @@ function CarouselContext(props: DiscriminatedRenderProps<RenderFn>) {
 	return selectedRenderFn(contextValue);
 }
 
-export const Root = CarouselRoot;
-export const Content = CarouselContent;
-export const Item = CarouselItem;
-export const Previous = CarouselPrevious;
-export const Next = CarouselNext;
-export const IndicatorList = CarouselIndicatorList;
-export const Indicator = CarouselIndicator;
-export const Context = CarouselContext;
-
-export { type CarouselApi };
+export {
+	CarouselContent as Content,
+	CarouselContext as Context,
+	CarouselIndicator as Indicator,
+	CarouselIndicatorList as IndicatorList,
+	CarouselItem as Item,
+	CarouselNext as Next,
+	CarouselPrevious as Previous,
+	CarouselRoot as Root,
+	type CarouselApi,
+};

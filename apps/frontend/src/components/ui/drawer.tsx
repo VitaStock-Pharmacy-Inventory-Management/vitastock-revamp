@@ -1,21 +1,20 @@
 "use client";
 
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { Fragment as ReactFragment, useLayoutEffect } from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 import { cnMerge } from "@/lib/utils/cn";
 
-function DrawerTrigger(props: InferProps<typeof DrawerPrimitive.Trigger>) {
+function DrawerTrigger(props: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {
 	return <DrawerPrimitive.Trigger data-slot="drawer-trigger" {...props} />;
 }
-function DrawerPortal(props: InferProps<typeof DrawerPrimitive.Portal>) {
+function DrawerPortal(props: React.ComponentProps<typeof DrawerPrimitive.Portal>) {
 	return <DrawerPrimitive.Portal data-slot="drawer-portal" {...props} />;
 }
-function DrawerClose(props: InferProps<typeof DrawerPrimitive.Close>) {
+function DrawerClose(props: React.ComponentProps<typeof DrawerPrimitive.Close>) {
 	return <DrawerPrimitive.Close data-slot="drawer-close" {...props} />;
 }
 
-function DrawerRoot(props: InferProps<typeof DrawerPrimitive.Root> & { trapFocus?: boolean }) {
+function DrawerRoot(props: React.ComponentProps<typeof DrawerPrimitive.Root> & { trapFocus?: boolean }) {
 	const { children, trapFocus = true, ...restOfProps } = props;
 
 	// NOTE - This is a hack to prevent radix within vaul from trapping focus like a massive idiot🙂
@@ -42,7 +41,7 @@ function DrawerRoot(props: InferProps<typeof DrawerPrimitive.Root> & { trapFocus
 	);
 }
 
-function DrawerOverlay(props: InferProps<typeof DrawerPrimitive.Overlay>) {
+function DrawerOverlay(props: React.ComponentProps<typeof DrawerPrimitive.Overlay>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -59,7 +58,10 @@ function DrawerOverlay(props: InferProps<typeof DrawerPrimitive.Overlay>) {
 }
 
 function DrawerContent(
-	props: InferProps<typeof DrawerPrimitive.Content> & { withHandle?: boolean; withPortal?: boolean }
+	props: React.ComponentProps<typeof DrawerPrimitive.Content> & {
+		withHandle?: boolean;
+		withPortal?: boolean;
+	}
 ) {
 	const { children, className, withHandle = true, withPortal = true, ...restOfProps } = props;
 
@@ -100,7 +102,7 @@ function DrawerContent(
 	);
 }
 
-function DrawerHeader(props: InferProps<"div">) {
+function DrawerHeader(props: React.ComponentProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -116,7 +118,7 @@ function DrawerHeader(props: InferProps<"div">) {
 	);
 }
 
-function DrawerFooter(props: InferProps<"div">) {
+function DrawerFooter(props: React.ComponentProps<"div">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -128,7 +130,7 @@ function DrawerFooter(props: InferProps<"div">) {
 	);
 }
 
-function DrawerTitle(props: InferProps<typeof DrawerPrimitive.Title>) {
+function DrawerTitle(props: React.ComponentProps<typeof DrawerPrimitive.Title>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -140,7 +142,7 @@ function DrawerTitle(props: InferProps<typeof DrawerPrimitive.Title>) {
 	);
 }
 
-const DrawerDescription = (props: InferProps<typeof DrawerPrimitive.Description>) => {
+const DrawerDescription = (props: React.ComponentProps<typeof DrawerPrimitive.Description>) => {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -152,22 +154,15 @@ const DrawerDescription = (props: InferProps<typeof DrawerPrimitive.Description>
 	);
 };
 
-export const Root = DrawerRoot;
-
-export const Overlay = DrawerOverlay;
-
-export const Content = DrawerContent;
-
-export const Header = DrawerHeader;
-
-export const Footer = DrawerFooter;
-
-export const Title = DrawerTitle;
-
-export const Description = DrawerDescription;
-
-export const Trigger = DrawerTrigger;
-
-export const Portal = DrawerPortal;
-
-export const Close = DrawerClose;
+export {
+	DrawerClose as Close,
+	DrawerContent as Content,
+	DrawerDescription as Description,
+	DrawerFooter as Footer,
+	DrawerHeader as Header,
+	DrawerOverlay as Overlay,
+	DrawerPortal as Portal,
+	DrawerRoot as Root,
+	DrawerTitle as Title,
+	DrawerTrigger as Trigger,
+};

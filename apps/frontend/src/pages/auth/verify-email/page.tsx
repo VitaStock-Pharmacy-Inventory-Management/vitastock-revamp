@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import { useForm } from "react-hook-form";
 import { For } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
-import { Button, Form, InputOTP } from "@/components/ui";
+import { Button, InputOTP } from "@/components/ui";
+import { Form } from "@/components/ui/form";
 import { Main } from "../-components/Main";
 
 function VerifyEmailPage() {

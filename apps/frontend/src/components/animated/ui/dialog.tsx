@@ -1,31 +1,22 @@
 "use client";
 
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { IconBox } from "@/components/common/IconBox";
 import { cnMerge } from "@/lib/utils/cn";
 import * as DialogPrimitive from "../primitives/dialog-radix";
 
-type DialogProps = InferProps<typeof DialogPrimitive.Root>;
-
-function DialogRoot(props: DialogProps) {
+function DialogRoot(props: React.ComponentProps<typeof DialogPrimitive.Root>) {
 	return <DialogPrimitive.Root {...props} />;
 }
 
-type DialogTriggerProps = InferProps<typeof DialogPrimitive.Trigger>;
-
-function DialogTrigger(props: DialogTriggerProps) {
+function DialogTrigger(props: React.ComponentProps<typeof DialogPrimitive.Trigger>) {
 	return <DialogPrimitive.Trigger {...props} />;
 }
 
-type DialogCloseProps = InferProps<typeof DialogPrimitive.Close>;
-
-function DialogClose(props: DialogCloseProps) {
+function DialogClose(props: React.ComponentProps<typeof DialogPrimitive.Close>) {
 	return <DialogPrimitive.Close {...props} />;
 }
 
-type DialogOverlayProps = InferProps<typeof DialogPrimitive.Overlay>;
-
-function DialogOverlay(props: DialogOverlayProps) {
+function DialogOverlay(props: React.ComponentProps<typeof DialogPrimitive.Overlay>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -36,15 +27,15 @@ function DialogOverlay(props: DialogOverlayProps) {
 	);
 }
 
-type DialogContentProps = InferProps<typeof DialogPrimitive.Content> & {
-	classNames?: {
-		base?: string;
-		overlay?: string;
-	};
-	withCloseButton?: boolean;
-};
-
-function DialogContent(props: DialogContentProps) {
+function DialogContent(
+	props: React.ComponentProps<typeof DialogPrimitive.Content> & {
+		classNames?: {
+			base?: string;
+			overlay?: string;
+		};
+		withCloseButton?: boolean;
+	}
+) {
 	const { children, className, classNames, withCloseButton = true, ...restOfProps } = props;
 
 	return (
@@ -77,9 +68,7 @@ function DialogContent(props: DialogContentProps) {
 	);
 }
 
-type DialogHeaderProps = InferProps<typeof DialogPrimitive.Header>;
-
-function DialogHeader(props: DialogHeaderProps) {
+function DialogHeader(props: React.ComponentProps<typeof DialogPrimitive.Header>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -90,9 +79,7 @@ function DialogHeader(props: DialogHeaderProps) {
 	);
 }
 
-type DialogFooterProps = InferProps<typeof DialogPrimitive.Footer>;
-
-function DialogFooter(props: DialogFooterProps) {
+function DialogFooter(props: React.ComponentProps<typeof DialogPrimitive.Footer>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -100,9 +87,7 @@ function DialogFooter(props: DialogFooterProps) {
 	);
 }
 
-type DialogTitleProps = InferProps<typeof DialogPrimitive.Title>;
-
-function DialogTitle(props: DialogTitleProps) {
+function DialogTitle(props: React.ComponentProps<typeof DialogPrimitive.Title>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -113,9 +98,7 @@ function DialogTitle(props: DialogTitleProps) {
 	);
 }
 
-type DialogDescriptionProps = InferProps<typeof DialogPrimitive.Description>;
-
-function DialogDescription(props: DialogDescriptionProps) {
+function DialogDescription(props: React.ComponentProps<typeof DialogPrimitive.Description>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -126,12 +109,14 @@ function DialogDescription(props: DialogDescriptionProps) {
 	);
 }
 
-export const Root = DialogRoot;
-export const Trigger = DialogTrigger;
-export const Close = DialogClose;
-export const Overlay = DialogOverlay;
-export const Content = DialogContent;
-export const Header = DialogHeader;
-export const Footer = DialogFooter;
-export const Title = DialogTitle;
-export const Description = DialogDescription;
+export {
+	DialogRoot as Root,
+	DialogTrigger as Trigger,
+	DialogClose as Close,
+	DialogOverlay as Overlay,
+	DialogContent as Content,
+	DialogHeader as Header,
+	DialogFooter as Footer,
+	DialogTitle as Title,
+	DialogDescription as Description,
+};

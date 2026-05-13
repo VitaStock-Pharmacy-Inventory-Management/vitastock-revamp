@@ -1,3 +1,4 @@
+import { on } from "@zayne-labs/toolkit-core";
 import { useEffect, useState } from "react";
 
 const useIsMobile = (options: { enable?: boolean; mobileBreakpoint?: number }) => {
@@ -10,16 +11,14 @@ const useIsMobile = (options: { enable?: boolean; mobileBreakpoint?: number }) =
 
 		const mql = window.matchMedia(`(max-width: ${mobileBreakpoint - 1}px)`);
 
-		const abortController = new AbortController();
-
+		// eslint-disable-next-line react/set-state-in-effect
 		const onChange = () => setIsMobile(window.innerWidth < mobileBreakpoint);
 
-		mql.addEventListener("change", onChange, { signal: abortController.signal });
+		const cleanup = on(mql, "change", onChange);
 
-		// eslint-disable-next-line react/set-state-in-effect
-		setIsMobile(window.innerWidth < mobileBreakpoint);
+		onChange();
 
-		return () => abortController.abort();
+		return () => cleanup();
 	}, [mobileBreakpoint, enable]);
 
 	return Boolean(isMobile);

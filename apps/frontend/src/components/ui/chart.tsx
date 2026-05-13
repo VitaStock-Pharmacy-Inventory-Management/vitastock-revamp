@@ -1,7 +1,7 @@
 "use client";
 
 import { css } from "@zayne-labs/toolkit-core";
-import type { CssWithCustomProperties, InferProps } from "@zayne-labs/toolkit-react/utils";
+import type { CssWithCustomProperties } from "@zayne-labs/toolkit-react/utils";
 import { createContext, use, useId, useMemo } from "react";
 import * as RechartsPrimitive from "recharts";
 import { cnMerge } from "@/lib/utils/cn";
@@ -45,8 +45,8 @@ const useChart = () => {
 };
 
 function ChartContainer(
-	props: InferProps<"div">
-		& Pick<InferProps<typeof RechartsPrimitive.ResponsiveContainer>, "children"> & {
+	props: Pick<React.ComponentProps<typeof RechartsPrimitive.ResponsiveContainer>, "children">
+		& React.ComponentProps<"div"> & {
 			config: ChartConfig;
 			initialDimension?: {
 				height: number;
@@ -125,9 +125,9 @@ function ChartStyle(props: { config: ChartConfig; id: string }) {
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
 function ChartTooltipContent(
-	props: InferProps<"div">
-		& InferProps<typeof RechartsPrimitive.Tooltip>
-		& Omit<RechartsPrimitive.DefaultTooltipContentProps, "accessibilityLayer"> & {
+	props: Omit<RechartsPrimitive.DefaultTooltipContentProps, "accessibilityLayer">
+		& React.ComponentProps<"div">
+		& React.ComponentProps<typeof RechartsPrimitive.Tooltip> & {
 			hideIndicator?: boolean;
 			hideLabel?: boolean;
 			indicator?: "dashed" | "dot" | "line";
@@ -274,7 +274,7 @@ function ChartTooltipContent(
 const ChartLegend = RechartsPrimitive.Legend;
 
 function ChartLegendContent(
-	props: InferProps<"div">
+	props: React.ComponentProps<"div">
 		& RechartsPrimitive.DefaultLegendContentProps & {
 			classNames?: {
 				base?: string;
@@ -378,14 +378,11 @@ const getConfigItemFromPayload = (config: ChartConfig, payload: unknown, key: st
 	return configLabelKey in config ? config[configLabelKey] : config[key];
 };
 
-export const Container = ChartContainer;
-
-export const Style = ChartStyle;
-
-export const Tooltip = ChartTooltip;
-
-export const TooltipContent = ChartTooltipContent;
-
-export const Legend = ChartLegend;
-
-export const LegendContent = ChartLegendContent;
+export {
+	ChartContainer as Container,
+	ChartLegend as Legend,
+	ChartLegendContent as LegendContent,
+	ChartStyle as Style,
+	ChartTooltip as Tooltip,
+	ChartTooltipContent as TooltipContent,
+};

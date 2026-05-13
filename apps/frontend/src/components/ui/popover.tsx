@@ -1,18 +1,17 @@
 "use client";
 
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { Popover as PopoverPrimitive } from "radix-ui";
 import { cnMerge } from "@/lib/utils/cn";
 
-function PopoverRoot(props: InferProps<typeof PopoverPrimitive.Root>) {
+function PopoverRoot(props: React.ComponentProps<typeof PopoverPrimitive.Root>) {
 	return <PopoverPrimitive.Root data-slot="popover-root" {...props} />;
 }
 
-function PopoverTrigger(props: InferProps<typeof PopoverPrimitive.Trigger>) {
+function PopoverTrigger(props: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {
 	return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />;
 }
 
-function PopoverContent(props: InferProps<typeof PopoverPrimitive.Content>) {
+function PopoverContent(props: React.ComponentProps<typeof PopoverPrimitive.Content>) {
 	const { align = "center", className, sideOffset = 4, ...restOfProps } = props;
 
 	return (
@@ -36,14 +35,13 @@ function PopoverContent(props: InferProps<typeof PopoverPrimitive.Content>) {
 		</PopoverPrimitive.Portal>
 	);
 }
-function PopoverAnchor(props: InferProps<typeof PopoverPrimitive.Anchor>) {
+function PopoverAnchor(props: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {
 	return <PopoverPrimitive.Anchor data-slot="popover-anchor" {...props} />;
 }
 
-export const Root = PopoverRoot;
-
-export const Content = PopoverContent;
-
-export const Trigger = PopoverTrigger;
-
-export const Anchor = PopoverAnchor;
+export {
+	PopoverRoot as Root,
+	PopoverContent as Content,
+	PopoverTrigger as Trigger,
+	PopoverAnchor as Anchor,
+};

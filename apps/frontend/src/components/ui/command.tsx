@@ -1,10 +1,9 @@
-import type { InferProps } from "@zayne-labs/toolkit-react/utils";
 import { Command as CommandPrimitive } from "cmdk";
 import { cnMerge } from "@/lib/utils/cn";
 import { IconBox } from "../common/IconBox";
 import * as DialogPrimitive from "./dialog";
 
-function CommandRoot(props: InferProps<typeof CommandPrimitive>) {
+function CommandRoot(props: React.ComponentProps<typeof CommandPrimitive>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -21,8 +20,8 @@ function CommandRoot(props: InferProps<typeof CommandPrimitive>) {
 }
 
 function CommandDialog(
-	props: InferProps<typeof DialogPrimitive.Root>
-		& Pick<InferProps<typeof DialogPrimitive.Content>, "withCloseButton"> & {
+	props: Pick<React.ComponentProps<typeof DialogPrimitive.Content>, "withCloseButton">
+		& React.ComponentProps<typeof DialogPrimitive.Root> & {
 			className?: string;
 			description?: string;
 			title?: string;
@@ -63,7 +62,7 @@ function CommandDialog(
 	);
 }
 
-function CommandInput(props: InferProps<typeof CommandPrimitive.Input>) {
+function CommandInput(props: React.ComponentProps<typeof CommandPrimitive.Input>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -83,7 +82,7 @@ function CommandInput(props: InferProps<typeof CommandPrimitive.Input>) {
 	);
 }
 
-function CommandList(props: InferProps<typeof CommandPrimitive.List>) {
+function CommandList(props: React.ComponentProps<typeof CommandPrimitive.List>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -95,7 +94,7 @@ function CommandList(props: InferProps<typeof CommandPrimitive.List>) {
 	);
 }
 
-function CommandEmpty(props: InferProps<typeof CommandPrimitive.Empty>) {
+function CommandEmpty(props: React.ComponentProps<typeof CommandPrimitive.Empty>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -107,7 +106,7 @@ function CommandEmpty(props: InferProps<typeof CommandPrimitive.Empty>) {
 	);
 }
 
-function CommandGroup(props: InferProps<typeof CommandPrimitive.Group>) {
+function CommandGroup(props: React.ComponentProps<typeof CommandPrimitive.Group>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -124,7 +123,7 @@ function CommandGroup(props: InferProps<typeof CommandPrimitive.Group>) {
 	);
 }
 
-function CommandSeparator(props: InferProps<typeof CommandPrimitive.Separator>) {
+function CommandSeparator(props: React.ComponentProps<typeof CommandPrimitive.Separator>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -136,7 +135,7 @@ function CommandSeparator(props: InferProps<typeof CommandPrimitive.Separator>) 
 	);
 }
 
-function CommandItem(props: InferProps<typeof CommandPrimitive.Item>) {
+function CommandItem(props: React.ComponentProps<typeof CommandPrimitive.Item>) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -155,7 +154,7 @@ function CommandItem(props: InferProps<typeof CommandPrimitive.Item>) {
 	);
 }
 
-function CommandShortcut(props: InferProps<"span">) {
+function CommandShortcut(props: React.ComponentProps<"span">) {
 	const { className, ...restOfProps } = props;
 
 	return (
@@ -167,20 +166,14 @@ function CommandShortcut(props: InferProps<"span">) {
 	);
 }
 
-export const Root = CommandRoot;
-
-export const Dialog = CommandDialog;
-
-export const Input = CommandInput;
-
-export const List = CommandList;
-
-export const Empty = CommandEmpty;
-
-export const Group = CommandGroup;
-
-export const Item = CommandItem;
-
-export const Shortcut = CommandShortcut;
-
-export const Separator = CommandSeparator;
+export {
+	CommandRoot as Root,
+	CommandDialog as Dialog,
+	CommandInput as Input,
+	CommandList as List,
+	CommandEmpty as Empty,
+	CommandGroup as Group,
+	CommandItem as Item,
+	CommandShortcut as Shortcut,
+	CommandSeparator as Separator,
+};
