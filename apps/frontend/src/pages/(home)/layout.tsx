@@ -6,7 +6,7 @@ import { NavBar } from "./-components/NavBar";
 function HomeLayout() {
 	return (
 		<>
-			<LoadingScreen isVisible={false} loadingText="Welcome to Vitastock" />
+			<LoadingScreen isVisible={true} loadingText="Welcome to Vitastock" />
 			<NavBar />
 			<Outlet />
 			<Footer />

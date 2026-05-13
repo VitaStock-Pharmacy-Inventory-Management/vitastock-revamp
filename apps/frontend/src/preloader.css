@@ -20,7 +20,7 @@
 	pointer-events: none;
 	position: absolute;
 	inset: 0;
-	background-image: url("./assets/images/noise.svg");
+	background-image: url("/src/assets/images/noise.svg");
 	opacity: 0.05;
 }
 
@@ -38,26 +38,26 @@
 }
 
 .preloader-logo img {
-	height: 56px; /* 3.5rem */
+	height: 56px;
 	width: auto;
 	object-fit: contain;
 }
 
 .preloader-progress-track {
 	position: relative;
-	margin-top: 48px; /* 3rem */
+	margin-top: 48px;
 	height: 2px;
-	width: 224px; /* 14rem */
+	width: 224px;
 	overflow: hidden;
 	border-radius: 9999px;
-	background-color: rgba(30, 80, 214, 0.05);
+	background-color: hsl(224, 75%, 48%, 0.05);
 }
 
 .preloader-progress-bar {
 	height: 100%;
 	width: 100%;
-	background-color: #1e50d6;
-	box-shadow: 0 0 20px #1e50d6;
+	background-color: hsl(223, 75%, 47%);
+	box-shadow: 0 0 20px hsl(224, 75%, 48%);
 	animation: preloader-progress 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
@@ -74,7 +74,7 @@
 	z-index: -10;
 	width: 400px;
 	height: 400px;
-	background-color: rgba(90, 141, 254, 0.1);
+	background-color: hsl(221, 99%, 67%, 0.1);
 	animation: preloader-glow 4s ease-in-out infinite;
 }
 
@@ -82,7 +82,7 @@
 	z-index: -20;
 	width: 300px;
 	height: 300px;
-	background-color: rgba(30, 80, 214, 0.1);
+	background-color: hsl(224, 75%, 48%, 0.1);
 	animation: preloader-glow 5s ease-in-out infinite reverse;
 }
 
@@ -90,23 +90,23 @@
 	position: absolute;
 	top: 140px;
 	display: flex;
-	gap: 8px; /* gap-2 */
-}
+	gap: 8px;
 
-.preloader-dots .dot {
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background-color: rgba(30, 80, 214, 0.3);
-	animation: dot-stagger 1.2s ease-in-out infinite;
-}
+	.dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: hsl(224, 75%, 48%, 0.3);
+		animation: dot-stagger 1.2s ease-in-out infinite;
+	}
 
-.preloader-dots .dot:nth-child(2) {
-	animation-delay: 0.2s;
-}
+	.dot:nth-child(2) {
+		animation-delay: 0.2s;
+	}
 
-.preloader-dots .dot:nth-child(3) {
-	animation-delay: 0.4s;
+	.dot:nth-child(3) {
+		animation-delay: 0.4s;
+	}
 }
 
 /* Animations */

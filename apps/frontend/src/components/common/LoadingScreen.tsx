@@ -30,7 +30,7 @@ function LoadingScreen(props: LoadingScreenProps) {
 						bg-white"
 				>
 					<div
-						className="pointer-events-none absolute inset-0 bg-[url('./src/assets/images/noise.svg')]
+						className="pointer-events-none absolute inset-0 bg-[url('src/assets/images/noise.svg')]
 							opacity-[0.05]"
 					/>
 
