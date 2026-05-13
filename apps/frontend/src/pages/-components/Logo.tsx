@@ -6,23 +6,24 @@ import { cnMerge } from "@/lib/utils/cn";
 
 function Logo(
 	props: Pick<Partial<InferProps<typeof ImageOnline>>, "className" | "src" | "width"> & {
+		as?: "div" | typeof NavLink;
 		children?: React.ReactNode;
 		classNames?: { base?: string; image?: string };
 	}
 ) {
-	const { children, className, classNames, src, ...restOfProps } = props;
+	const { as: Element = NavLink, children, className, classNames, src, ...restOfProps } = props;
 
 	return (
-		<NavLink to="/" className={classNames?.base}>
+		<Element to="/" className={classNames?.base}>
 			<ImageOnline
 				src={src ?? logo}
 				alt="Logo"
 				priority={true}
-				className={cnMerge("shrink-0 object-contain", className, classNames?.image)}
+				className={cnMerge("shrink-0", className, classNames?.image)}
 				{...restOfProps}
 			/>
 			{children}
-		</NavLink>
+		</Element>
 	);
 }
 

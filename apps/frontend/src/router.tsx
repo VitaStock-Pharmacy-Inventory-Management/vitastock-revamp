@@ -1,5 +1,6 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router";
+import { LoadingScreen } from "./components/common/LoadingScreen";
 import { SonnerToaster } from "./components/common/Toaster";
 import ErrorPage from "./pages/error";
 import RootLayout from "./pages/layout";
@@ -69,7 +70,9 @@ const browserRouter = createBrowserRouter(routes);
 export function Router() {
 	return (
 		<Providers>
-			<RouterProvider router={browserRouter} />
+			<Suspense fallback={<LoadingScreen />}>
+				<RouterProvider router={browserRouter} />
+			</Suspense>
 			<SonnerToaster />
 		</Providers>
 	);

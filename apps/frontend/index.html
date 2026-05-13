@@ -33,6 +33,9 @@
 
 		<link rel="stylesheet" href="./src/assets/css/fonts.css" />
 		<link rel="stylesheet" href="./tailwind.css" />
+
+		<link rel="stylesheet" href="./src/preloader.css" />
+		<script type="module" src="./src/preloader.ts"></script>
 		<script type="module" src="./src/main.tsx"></script>
 
 		<title>VitaStock - Pharmacy Inventory & Intelligence Platform</title>
@@ -40,5 +43,25 @@
 
 	<body>
 		<div id="root"></div>
+
+		<aside id="preloader">
+			<div class="preloader-texture"></div>
+			<div class="preloader-content">
+				<div class="preloader-logo">
+					<img src="/src/assets/images/logo.svg" alt="VitaStock" />
+				</div>
+				<div class="preloader-progress-track">
+					<div class="preloader-progress-bar"></div>
+				</div>
+				<div class="preloader-glow glow-1"></div>
+				<div class="preloader-glow glow-2"></div>
+
+				<div class="preloader-dots">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+		</aside>
 	</body>
 </html>
