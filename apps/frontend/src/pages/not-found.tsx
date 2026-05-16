@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { IconBox } from "@/components/common/IconBox";
 import { Button } from "@/components/ui";
-import { Logo } from "./-components/Logo";
+import { Logo } from "../components/common/Logo";
 import { Main } from "./auth/-components/Main";
 
 function NotFoundPage() {

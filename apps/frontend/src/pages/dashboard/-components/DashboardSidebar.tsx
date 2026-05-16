@@ -2,9 +2,9 @@
 
 import { For } from "@/components/common/for";
 import { IconBox } from "@/components/common/IconBox";
+import { Logo } from "@/components/common/Logo";
 import { NavLink } from "@/components/common/NavLink";
 import { Sidebar } from "@/components/ui";
-import { Logo } from "@/pages/-components/Logo";
 
 const navItems = [
 	{

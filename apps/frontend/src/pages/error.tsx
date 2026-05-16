@@ -2,9 +2,9 @@ import { tw } from "@zayne-labs/toolkit-core";
 import { useEffect } from "react";
 import { useRouteError } from "react-router";
 import { IconBox } from "@/components/common/IconBox";
+import { Logo } from "@/components/common/Logo";
 import { Button } from "@/components/ui";
 import { cnJoin } from "@/lib/utils/cn";
-import { Logo } from "@/pages/-components/Logo";
 import { Main } from "@/pages/auth/-components/Main";
 
 const chunkErrorDetails = {

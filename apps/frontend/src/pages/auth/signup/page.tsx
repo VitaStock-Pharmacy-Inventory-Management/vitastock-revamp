@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { IconBox } from "@/components/common/IconBox";
+import { Logo } from "@/components/common/Logo";
 import { NavLink } from "@/components/common/NavLink";
 import { Button } from "@/components/ui";
 import { Form } from "@/components/ui/form";
-import { Logo } from "@/pages/-components/Logo";
 import { Main } from "../-components/Main";
 
 function SignupPage() {

@@ -1,9 +1,9 @@
 import { useScrollObserver } from "@zayne-labs/toolkit-react";
 import { ForWithWrapper } from "@zayne-labs/ui-react/common/for";
+import { Logo } from "@/components/common/Logo";
 import { NavLink } from "@/components/common/NavLink";
 import { Button } from "@/components/ui/button";
 import { cnJoin, cnMerge } from "@/lib/utils/cn";
-import { Logo } from "@/pages/-components/Logo";
 import { navLinkItems } from "../-constants/navLinkItems";
 
 function NavBar() {

@@ -1,8 +1,8 @@
 import type { InferProps } from "@zayne-labs/toolkit-react/utils";
-import { NavLink } from "react-router";
 import { logo } from "@/assets/images";
 import { ImageOnline } from "@/components/common/Image";
 import { cnMerge } from "@/lib/utils/cn";
+import { NavLink } from "./NavLink";
 
 function Logo(
 	props: Pick<Partial<InferProps<typeof ImageOnline>>, "className" | "src" | "width"> & {

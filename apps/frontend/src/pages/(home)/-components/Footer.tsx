@@ -1,6 +1,6 @@
 import { ForWithWrapper } from "@zayne-labs/ui-react/common/for";
+import { Logo } from "@/components/common/Logo";
 import { NavLink } from "@/components/common/NavLink";
-import { Logo } from "@/pages/-components/Logo";
 
 function Footer() {
 	return (
